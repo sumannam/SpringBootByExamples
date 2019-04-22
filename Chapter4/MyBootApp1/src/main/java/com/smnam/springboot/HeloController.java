@@ -9,11 +9,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class HeloController 
 {
-	@RequestMapping("/{tax}")
-	public ModelAndView index(@PathVariable int tax,
-					ModelAndView mav) {
-			mav.setViewName("index");
-			mav.addObject("tax",tax);
-			return mav;
-	}   
+	@RequestMapping("/")
+	public ModelAndView index(ModelAndView mav) {
+	        mav.setViewName("index");
+	        return mav;
+	}
 }
