@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>top page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        pre { font-size:13pt; color:gray; padding:5px 10px;
+                border:1px solid gray; }
+        
+        </style>
+</head>
+<body>
+        <h1>Helo page</h1>
+        <pre th:text="${msg}">please wait...</pre>
+        <form method="post" action="/">
+                <div>
+                <input type="checkbox" id="check1" name="check1" />
+                <label for="check1">체크</label>
+                </div>
+                <div>
+                <input type="radio" id="radioA" name="radio1" value="male" />
+                <label for="radioA">남성</label>
+                </div>
+                <div>
+                <input type="radio" id="radioB" name="radio1" value="female" />
+                <label for="radioB">여성</label>
+                </div>
+                <div>
+                <select id="select1" name="select1" size="4">
+                        <option value="Windows">Windows</option>
+                        <option value="Mac">Mac</option>
+                        <option value="Linux">Linux</option>
+                </select>
+                <select id="select2" name="select2" size="4" multiple="multiple">
+                        <option value="Android">Android</option>
+                        <option value="iphone">iPhone</option>
+                        <option value="Winfone">Windows Phone</option>
+                </select>
+                </div>
+                <input type="submit" value="Click" />
+        </form>
+</body>
+
+
+</html>
+
