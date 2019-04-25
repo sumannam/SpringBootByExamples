@@ -13,19 +13,14 @@
 	</style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<table th:inline="text">
-			<tr>
-			<th>ID</th>
-			<th>NAME</th>
-			<th>MAIL</th>
-			</tr>
-			<tr th:each="obj : ${data}">
-			<td>[[${obj.id}]]</td>
-			<td>[[${obj.name}]]</td>
-			<td>[[${obj.value}]]</td>
-			</tr>
-	</table>
+        <h1 th:text="#{content.title}">Helo page</h1>
+        <p th:text="|expression[ ${check} ]|"></p>
+        <table th:object="${data.get(__${check}__)}">
+                <tr><th>ID</th><td th:text="*{id}"></td></tr>
+                <tr><th>NAME</th><td th:text="*{name}"></td></tr>
+                <tr><th>MAIL</th><td th:text="*{value}"></td></tr>
+        </table>
 </body>
+
 
 </html>
