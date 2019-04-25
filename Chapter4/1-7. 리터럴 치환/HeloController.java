@@ -9,17 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class HeloController 
 {
-        String[] names = {"kim"
-        				   , "lee"
-        				   , "park"
-        				   , "choi"
-        				   , "jo"};
-        String[] mails = {"kim@tuuyano.com"
-        				  , "lee@flower"
-        				  , "park@yamda"
-        				  , "choi@happy"
-        				  , "jo@baseball"};
-
         @RequestMapping("/")
         public ModelAndView index(ModelAndView mav) {
                 mav.setViewName("index");
