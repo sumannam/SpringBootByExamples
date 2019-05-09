@@ -13,35 +13,35 @@ import org.springframework.web.servlet.ModelAndView;
 public class HeloController {
 	/**
 	 * 	@fn		public ModelAndView index(ModelAndView mav)
-	 *	@brief	ì´ˆê¸° í˜ì´ì§€ ì„¤ì •
+	 *	@brief	ÃÊ±â ÆäÀÌÁö ¼³Á¤
 	 *	@details
 	 *
-	 *	@author	ê¶Œì—°ì¤€
+	 *	@author	±Ç¿¬ÁØ
 	 *	@date	2019-05-09
 	 
 	 *	@param
-	 *	@remark	ì›¹ í˜ì´ì§€ë¥¼ ë¶ˆëŸ¬ì˜¤ê¸° ìœ„í•œ ì´ˆê¸°í˜ì´ì§€ ì„¤ì • [2019-05-09; ê¶Œì—°ì¤€]
+	 *	@remark	À¥ ÆäÀÌÁö¸¦ ºÒ·¯¿À±â À§ÇÑ ÃÊ±âÆäÀÌÁö ¼³Á¤ [2019-05-09; ±Ç¿¬ÁØ]
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		mav.setViewName("index");
-        mav.addObject("res","ìˆ«ìì…ë ¥");
+        mav.addObject("res","¼ıÀÚÀÔ·Â");
 		return mav;
 	}
 
 	/**
 	 * 	@fn	public ModelAndView send
-	 *	@brief	input boxì—ì„œ num1, num2ë¥¼ ë°›ì•„ ë§ì…ˆ/ëº„ì…ˆ/ê³±ì…ˆ/ë‚˜ëˆ—ì…ˆ ê³„ì‚°
+	 *	@brief	input box¿¡¼­ num1, num2¸¦ ¹Ş¾Æ µ¡¼À/»¬¼À/°ö¼À/³ª´°¼À °è»ê
 	 *	@details
 	 *
-	 *	@author	ê¶Œì—°ì¤€
+	 *	@author	±Ç¿¬ÁØ
 	 *	@date	2019-05-09
 	 *
-	 *	@param	resPlus = ë§ì…ˆ
-	 *  @param	resMinus = ëº„ì…ˆ
-	 *  @param	resMultiply = ë‚˜ëˆ—ì…ˆ
-	 *  @param	resDivision = ê³±ì…ˆ
-	 *	@remark 4ì¹™ì—°ì‚° ê²°ê³¼ë¥¼ ìœ„í•´ res1~res4 ì„ ì–¸ [2019-05-09; ê¶Œì—°ì¤€]
+	 *	@param	resPlus = µ¡¼À
+	 *  @param	resMinus = »¬¼À
+	 *  @param	resMultiply = ³ª´°¼À
+	 *  @param	resDivision = °ö¼À
+	 *	@remark 4Ä¢¿¬»ê °á°ú¸¦ À§ÇØ res1~res4 ¼±¾ğ [2019-05-09; ±Ç¿¬ÁØ]
 	 */
 	
 	@RequestMapping(value="/",method=RequestMethod.POST)
@@ -69,10 +69,9 @@ public class HeloController {
 		String resDivision1 = String.valueOf(resDivision);
 		
 		mav.addObject("res1",num1 + "+" + num2 + "=" + resPlus1);
-		mav.addObject("res2",num1 + "+" + num2 + "=" + resPlus1);
-		mav.addObject("res3",num1 + "-" + num2 + "=" + resMinus1);
-		mav.addObject("res4",num1 + "*" + num2 + "=" + resMultiply1);
-		mav.addObject("res5",num1 + "/" + num2 + "=" + resDivision1); 
+		mav.addObject("res2",num1 + "-" + num2 + "=" + resMinus1);
+		mav.addObject("res3",num1 + "*" + num2 + "=" + resMultiply1);
+		mav.addObject("res4",num1 + "/" + num2 + "=" + resDivision1); 
 		mav.setViewName("index");
 		
 		return mav;
