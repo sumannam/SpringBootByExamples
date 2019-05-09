@@ -1,35 +1,53 @@
 package com.example.demo;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
-public class Helocontroller {
-	@RequestMapping(value= "/", method=RequestMethod.GET)
+@RestController
+public class HeloController 
+{
+	/**
+	 * *
+	 * @param 
+	 * @return mav 		setviewName�로 받� index html
+	 * 
+	 * @remark get방식�로 �용�로부보여지�론�엔�이지�반환처리 
+	 */
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		mav.setViewName("index");
-		mav.addObject("msg","폼을 전송해주세요.");
 		return mav;
 	}
 	
-	@RequestMapping(value= "/", method=RequestMethod.POST)
-	public ModelAndView send(
-			@RequestParam(value="check1", required=false)boolean check1,
-			@RequestParam(value="radio1", required=false)String radio1,
-			@RequestParam(value="select1", required=false)String select1,
-			@RequestParam(value="select2", required=false)String[] select2,
-			ModelAndView mav) {
+	/**
+	 * 
+	 * @param str1		html�부받� num1 �
+	 * @param str2		html�부받� num2 �
+	 * @param mav		ModelAndView �래�의 �스�스
+	 * @return			�스�스 반환
+	 * 
+	 * @remark		매개변�로 받� 문자num1�num2륕수�변�해 계산 처리
+	 */
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public ModelAndView send(@RequestParam(value="num1",required=false)String str1
+							 ,@RequestParam(value="num2",required=false)String str2
+							 , ModelAndView mav) {
 		
-		String res = "";
+		String res="";
+		int num1 = Integer.parseInt(str1);		//문자�수�변
+		int num2 = Integer.parseInt(str2);		//문자�수�변
 		try {
-			res = "check:" + check1 +
-				" radio: " + radio1 +
-				" select: " + select1 +
-				"\nselect2:";
+			int result = num1 + num2;
+			res = String.valueOf(result);		//결과값을 문자�로 변
+			
 		} catch(NullPointerException e) {
 			res += "null";
 		}
