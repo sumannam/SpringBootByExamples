@@ -13,15 +13,19 @@ import org.springframework.web.servlet.ModelAndView;
 public class HeloController 
 {
 	/**
-	 * 	@fn	public ModelAndView send
-	 *	@brief	url에서 숫자를 받아 환율 계산
-	 *	@details
+	 * 	@fn			public ModelAndView send(@PathVariable int num, ModelAndView mav)
+	 *	@brief		함수 설명: url에서 숫자를 받아 환율 계산
+	 *	@details	함수 상세 설명
 	 *
-	 *	@author	한예나
-	 *	@date	2019-05-09
+	 *	@author		한예나
+	 *	@date		2019-05-09
 	 *
-	 *	@param	
-	 *	@remark 환율 결과 출력을 위해 res 선언 [2019-05-09; 한예나]
+	 *	@param		int 			num	HTML에서 입력받는 숫자 저장
+	 *	@param		ModelAndView 	mav ModelAndView 변수
+	 *
+	 *	@return		mav	HTML에 처리할 값 저장
+	 *
+	 *	@remark 	환율 결과 출력을 위해 res 선언 [2019-05-09; 한예나]
 	 */
 	@RequestMapping("/{num}")
 	public ModelAndView send(@PathVariable int num,
