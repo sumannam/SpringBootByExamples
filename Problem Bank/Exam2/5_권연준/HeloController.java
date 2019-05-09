@@ -69,10 +69,9 @@ public class HeloController {
 		String resDivision1 = String.valueOf(resDivision);
 		
 		mav.addObject("res1",num1 + "+" + num2 + "=" + resPlus1);
-		mav.addObject("res2",num1 + "+" + num2 + "=" + resPlus1);
-		mav.addObject("res3",num1 + "-" + num2 + "=" + resMinus1);
-		mav.addObject("res4",num1 + "*" + num2 + "=" + resMultiply1);
-		mav.addObject("res5",num1 + "/" + num2 + "=" + resDivision1); 
+		mav.addObject("res2",num1 + "-" + num2 + "=" + resMinus1);
+		mav.addObject("res3",num1 + "*" + num2 + "=" + resMultiply1);
+		mav.addObject("res4",num1 + "/" + num2 + "=" + resDivision1); 
 		mav.setViewName("index");
 		
 		return mav;
