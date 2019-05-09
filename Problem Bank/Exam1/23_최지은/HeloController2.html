@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="/{num}">
+	<select>
+	<option>미국</option><option>한국</option>
+	</select>
+	<p>
+   <input type="text" name="num" /><p>
+   <select>
+	<option>한국</option><option>미국</option>
+	</select>
+   <p th:text="${res}">값을 입력해주세요</p>
+<input type="submit" value="Click" />
+</form>
+</body>
+</html>
