@@ -40,7 +40,7 @@ public class HeloController
 		}
 		
 		final int basicCharge = 660;			//기본요금
-		final double kw = 88.5, tex = 0.09;	//kw간 사용 요금, 세금
+		final double kw = 88.5, tex = 1.09;	//kw간 사용 요금, 세금
 		int mayUsage = 0, 
 			finalMayUsage = 0, 
 			averageCost = 0, 
