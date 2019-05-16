@@ -33,26 +33,24 @@ public class HeloController4 {
 		
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public ModelAndView send(
-		@RequestParam(value="num1",required=false)int num1
-		,ModelAndView mav) {
-			
-			
-			SimpleDateFormat format = new SimpleDateFormat ( "yyyy");
-			Date time = new Date();
-			
-			String time1 = format.format(time);
-			
-			int num = Integer.parseInt(time1);
-			
-			int year = num1;
-			
-			int total = 0;
-			
-			total = num - year;
-			
-			mav.addObject("res", total);
-			mav.setViewName("index4");
-			return mav;
+		@RequestParam(value="num1"
+					  , required=false)int num1
+					  , ModelAndView mav) 
+	{
+		SimpleDateFormat format = new SimpleDateFormat ("yyyy");
+		Date time = new Date();
+		
+		String time1 = format.format(time);
+		
+		int num		= Integer.parseInt(time1);
+		int year	= num1;
+		int total	= 0;
+		
+		total = num - year;
+		
+		mav.addObject("res", total);
+		mav.setViewName("index4");
+		return mav;
 	}
 
 }
