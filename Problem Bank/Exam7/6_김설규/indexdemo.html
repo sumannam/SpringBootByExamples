@@ -1,0 +1,22 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+<input type="text" name="number" />kw(단위)</p>
+클릭하면 5월 금액과 올해 평균 금액이 산출 됩니다. 
+<input type="submit" value="Click" />
+</form>
+<p th:text="${Maymonthsting}">5월 사용 금액</p>
+<p th:text="${Averagesting}">올해 사용 금액</p>
+</body>
+</html>
