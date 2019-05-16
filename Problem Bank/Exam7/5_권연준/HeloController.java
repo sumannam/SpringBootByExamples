@@ -18,7 +18,7 @@ public class HeloController
 		 *	@brief	초기 페이지 설정
 		 *	@details
 		 *
-		 *	@author	권연준ㄴ
+		 *	@author	권연준
 		 *	@date	2019-05-16
 		 
 		 *	@param
@@ -41,7 +41,7 @@ public class HeloController
 	 *
 	 *	@param	int num1~num12      HTML에서 입력받는 숫자 저장
 	 *	@param	double total  	       전체요금 = 기본요금 +(사용량*kw당 사용요금)
-	 *	@param	double totalTax		최종사용요금 = 전체요금 * 세금 세금=9%ㄴ
+	 *	@param	double totalTax		최종사용요금 = 전체요금 * 세금 세금=9%
 	 *	@param	double yearTotal	1년 총합 사용금액
 	 *	@param	double yearAvg		1년 평균 사용금액
 	 *
@@ -65,12 +65,12 @@ public class HeloController
 		
 		int [] array = {num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11, num12};
 		double total = (660 + (array[4] * 88.5));
-		double totalTax = total * 0.09;
+		double totalTax = total * 1.09;
 		double yearTotal = 0;
 		double yearAvg = 0;
 		
 		for (int i=0; i<array.length; i++) {
-			yearTotal =  yearTotal + ((660 + ( array[i] * 88.5))*0.09);
+			yearTotal =  yearTotal + ((660 + ( array[i] * 88.5))*1.09);
 		}
 		yearAvg = yearTotal/array.length;
 		
