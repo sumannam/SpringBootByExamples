@@ -51,18 +51,21 @@ public class HeloController {
 							  ModelAndView mav) {
 		int res = 0;
 		int i = 1;
-		if(num>=0) {
-			for(i=1; i<=num; i++) {
-				if(i%2==1) {
-					res += i;
-				}
-			}
-			mav.addObject("res", res );
-		} else if(num<0) {
-			mav.addObject("res", "0 이상의 값을 입력해주세요." );
-		} 
 		
 		mav.setViewName("index");
+		
+		if(num<0) {
+			mav.addObject("res", "0 이상의 값을 입력해주세요." );
+			return mav;
+		} 
+		
+		for(i=1; i<=num; i++) {
+			if(i%2==1) {
+				res += i;
+			}
+		}
+		mav.addObject("res", res );
+ 
 		return mav;
 	}
 }
