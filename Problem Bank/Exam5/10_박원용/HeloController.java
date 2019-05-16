@@ -16,23 +16,15 @@ public class HeloController {
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ModelAndView send(@RequestParam("num1")int num, ModelAndView mav) {
-		int su=0;
+	public ModelAndView send(@RequestParam("num")int num, ModelAndView mav) {
 		int sum=0;
 		
-		
-		for(su=0;su<=num;su++) {
-			
-			if(su%2!=0) {
-				sum = sum + su;
+		for(int i=0;i<=num;i++) {
+			if(i%2!=0) {
+				sum = sum + i;
 			}
-		
-		
-			
 		}
 		
-		
-
 		mav.addObject("res", "당신이 입력한 값까지의 홀수합은 "+sum);
 		mav.setViewName("index");
 
