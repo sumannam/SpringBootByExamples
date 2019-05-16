@@ -43,14 +43,17 @@ public class HeloController4 {
 			
 			int total = 0;
 			int april=0;
+			int may = 0;
 			double average = 0;
+			
+			may = (int) (660 + (usage*88.5));
 			
 			ArrayList<Integer> total_usage  = new ArrayList<Integer>();
 			total_usage.add(20580);
 			total_usage.add(15720);
 			total_usage.add(32300);
 			total_usage.add(25120);
-			total_usage.add(usage);
+			total_usage.add(may);
 			
 			april = total_usage.indexOf(3);
 			
