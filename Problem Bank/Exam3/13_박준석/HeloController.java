@@ -14,10 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class HeloController 
 {
-	/**
-	 * @return	mav 	template 값 반환
-	 */
-
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		mav.setViewName("index");
@@ -26,32 +22,25 @@ public class HeloController
 	
 	/**
 	 * 
-	 * @param	num1	매개값 1
-	 * @param 	num2	매개값 2
-	 * @return	mav		template 값 반환
+	 * @param	birth	사용자가 태어난 해
+	 * @param 	year	당해 년도
+	 * @return	mav		template 반환 값
 	 */
 
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ModelAndView send(@RequestParam(value="num1", required=false)int num1
-							 ,@RequestParam(value="num2", required=false)int num2
-							 , ModelAndView mav) {
+	public ModelAndView send(@RequestParam(value="birth", required=false)int birth, ModelAndView mav) {
 		
-		int sum=0, multi=0, sub=0, division=0;		//사칙연산 수행 변수
+		final int year = 2019;			//당해 년도는 값의 변경 방지를 위해 상수화
+		int age = 0;		
 		
 		try {
-			sum = num1+num2;
-			multi = num1*num2;
-			sub = num1-num2;
-			division = num1/num2;
+			age = year - birth;		//당해 년도  - 사용자가 태어난 해 (나이 계산)
 			
 		} catch(Exception e) {
 			return mav;
 		}
 		
-		mav.addObject("sum", sum);
-		mav.addObject("multi", multi);
-		mav.addObject("sub", sub);
-		mav.addObject("div", division);
+		mav.addObject("res", "당신의 나이는 " + age + "세입니다.");
 		mav.setViewName("index");
 		return mav;
 	}
