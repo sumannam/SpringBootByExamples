@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>top page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        </style>
+</head>
+<body>
+		<p th:text="${msg}"></p>
+
+
+        <form method="post" action="/">
+                <input type="text" name="num1"/>+<input type="text" name="num2"/>=<p th:text="${msg1}"></p><br>
+                <input type="text" name="num3"/>-<input type="text" name="num4"/>=<p th:text="${msg2}"></p><br>
+                <input type="text" name="num5"/>*<input type="text" name="num6"/>=<p th:text="${msg3}"></p><br>
+                <input type="text" name="num7"/>%<input type="text" name="num8"/>=<p th:text="${msg4}"></p><br>
+                <input type="submit" value="Click" />
+        </form>
+</body>
+
+</html>
