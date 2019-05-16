@@ -68,9 +68,11 @@ public class HeloController {
 			mav.addObject("res",name + "님의 체질량지수(BMI): " + res);
 			mav.addObject("res2","과체중입니다.");
 			mav.setViewName("index");
-		} else {
+		} else if (res>=30) {
 			mav.addObject("res",name + "님의 체질량지수(BMI): " + res);
 			mav.addObject("res2","비만입니다.");
+		} else {
+			mav.addObject("res", "값을 제대로 입력해주세요.");
 		}
 		
 		mav.setViewName("index");
