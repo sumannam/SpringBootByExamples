@@ -1,10 +1,11 @@
-
-package com.wonyong.springboot;
+package com.kwackchaelim.springboot;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -16,18 +17,26 @@ public class HeloController {
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ModelAndView send(@RequestParam("num")int num, ModelAndView mav) {
-		int sum=0;
+	public ModelAndView send(@RequestParam("student1")int stu1,
+							 @RequestParam("student2")int stu2,
+							 @RequestParam("student3")int stu3,
+							 @RequestParam("student4")int stu4,
+							 @RequestParam("student5")int stu5,
+							 ModelAndView mav) {
 		
-		for(int i=0;i<=num;i++) {
-			if(i%2!=0) {
-				sum = sum + i;
-			}
-		}
+		int[] array = {stu1, stu2 , stu3, stu4, stu5};
 		
-		mav.addObject("res", "당신이 입력한 값까지의 홀수합은 "+sum);
-		mav.setViewName("index");
+		int sum = 0;
 
+		for (int i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+
+		double avg = sum/ array.length;
+		
+		mav.addObject("res1", "학생 5명의 총합점수의 평균은 " + avg + "입니다.");
+		mav.setViewName("index");
+		
 		return mav;
 	}
 }

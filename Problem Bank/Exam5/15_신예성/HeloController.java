@@ -1,5 +1,4 @@
-
-package com.wonyong.springboot;
+package com.shin.springboot;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class HeloController {
+	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		mav.setViewName("index");
@@ -16,16 +16,16 @@ public class HeloController {
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ModelAndView send(@RequestParam("num")int num, ModelAndView mav) {
-		int sum=0;
-		
-		for(int i=0;i<=num;i++) {
-			if(i%2!=0) {
-				sum = sum + i;
+	public ModelAndView send(@RequestParam("num1")int str, ModelAndView mav) {
+		int sum = 0;
+				
+		for(int i=1; i <= str; i++) {
+			if(i%2 == 1){
+				sum += i;
 			}
 		}
 		
-		mav.addObject("res", "당신이 입력한 값까지의 홀수합은 "+sum);
+		mav.addObject("res", sum);
 		mav.setViewName("index");
 
 		return mav;

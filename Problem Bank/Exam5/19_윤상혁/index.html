@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+1부터 <input type="text" name="num" /> 까지 홀수의 합은 ? <br>
+<input type="submit" value="계산하기" /> <br>
+
+</form>
+<p class="msg" th:text="${res}">please wait...</p>
+</body>
+</html> 
