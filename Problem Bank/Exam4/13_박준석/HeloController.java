@@ -39,13 +39,13 @@ public class HeloController
 		double bmi = weight / (tall * tall); 		//BMI 지수 값 구하기
 		
 		
-		if(bmi > 0 || bmi <= 18.5) {
+		if(bmi > 0 && bmi <= 18.5) {
 			mav.addObject("res", "당신의 체중 상태는 저체중 입니다.");
 		}
-		else if (bmi > 18.5 || bmi <= 24.9) {
+		else if (bmi > 18.5 && bmi <= 24.9) {
 			mav.addObject("res", "당신의 체중 상태는 정상 입니다.");
 		} 
-		else if(bmi >= 25 || bmi <= 29.9) {
+		else if(bmi >= 25 && bmi <= 29.9) {
 			mav.addObject("res", "당신의 체중 상태는 과체중 입니다.");
 		}
 		else if(bmi >= 30) {
