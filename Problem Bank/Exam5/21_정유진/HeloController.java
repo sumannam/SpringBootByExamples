@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HeloController {
 	/**
-	 *	@fn			public ModelAndView index(ModelAndView mav)
+	 *	@fn		public ModelAndView index(ModelAndView mav)
 	 *	@brief		웹 페이지 초기 페이지 설정
 	 *	@derails
 	 *
@@ -29,7 +29,7 @@ public class HeloController {
 	}
 	
 	/**
-	 *	@fn			public ModelAndView send(@RequestParam("num") int num,ModelAndView mav)
+	 *	@fn		public ModelAndView send(@RequestParam("num") int num,ModelAndView mav)
 	 *	@brief		1부터 N까지 홀수의 합 구하기
 	 *	@derails	
 	 *
