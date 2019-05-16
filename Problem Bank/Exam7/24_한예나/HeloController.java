@@ -48,10 +48,9 @@ public class HeloController
 							 ModelAndView mav) {
 
 		double total = 660 + (may_use * 88.5);
-		double last = total * 0.09;
+		double last = total*1.09;
 		
-		double [] array = {20580, 15720, 32300, 25120, last, 15480, 
-						   12250, 54800, 76510, 12450, 12300, 21150 };
+		double [] array = {20580, 15720, 32300, 25120, last};
 		int sum = 0;
 		
 		for (int i=0; i<array.length; i++) {
