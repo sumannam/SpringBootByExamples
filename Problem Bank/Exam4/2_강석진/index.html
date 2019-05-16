@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+table {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+	<form name = "form1" method="post">
+	<h1>BMI 계산기</h1>
+	신장 : <input type="text" name = "tall"/> cm<p>
+	체중 : <input type="text" name = "weight"/> kg 
+	
+	<p th:text="${bmi}"></p>
+	<p th:text="${bmi2}"></p>
+	
+	<input type = "submit" value = "click">
+	<input type = "reset" value = "reset">
+
+	</form>
+	
+	<p><p><p>
+	<table border = 1>
+	<tr>
+		<th bgcolor = "orange" width = "100px">BMI</th>
+		<th bgcolor = "orange">체중상태</th>
+	</tr>
+	<tr>
+		<td>18.4이하</td>
+		<td>저체중</td>
+	</tr>
+	<tr>
+		<td>18.5 - 24.9</td>
+		<td>정상</td>
+	</tr>
+	<tr>
+		<td>25.0 - 29.9</td>
+		<td>과체중</td>
+	</tr>
+	<tr>
+		<td>30.0이상</td>
+		<td>비만</td>
+	</tr>
+	</table>
+
+</body>
+
+</html>
