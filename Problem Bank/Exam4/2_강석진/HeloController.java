@@ -52,7 +52,8 @@ public class HeloController {
 	 */
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public ModelAndView send(@RequestParam("tall") int tall, 
+	public ModelAndView send(@RequestParam("name") String name, 
+							 @RequestParam("tall") int tall, 
 							 @RequestParam("weight") double weight, ModelAndView mav) {
 		
 		double tallcm = tall / 100.0;
@@ -77,7 +78,7 @@ public class HeloController {
 		}
 		
 		mav.addObject("bmi", "나의 체질량 지수(bmi) : " + bmi);
-		mav.addObject("bmi2", "당신은  " + result + "입니다.");
+		mav.addObject("bmi2", name + "씨는  " + result + "입니다.");
 		mav.setViewName("index");
 		return mav;
 	}
