@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>find page</title>
+	<meta http-equiv="Content-Type"
+	        content="text/html; charset=UTF-8" />
+	<style>
+	h1 { font-size:18pt; font-weight:bold; color:gray; }
+	body { font-size:13pt; color:gray; margin:5px 25px; }
+	tr { margin:5px; }
+	th { padding:5px; color:white; background:darkgray; }
+	td { padding:5px; color:black; background:#e0e0ff; }
+	</style>
+</head>
+<body>
+	<h1 th:text="${title}">find page</h1>
+	<p th:text="${msg}"></p>
+	<table>
+	<form action="/find" method="post">
+	        <tr><td>FIND:</td>
+	        <td><input type="text" name="fstr" size="20"
+	                th:value="${value}"/></td></tr>
+	        <tr><td></td><td><input type="submit" /></td></tr>
+	</form>
+	</table>
+	<hr/>
+	<table>
+	<tr><th>ID</th><th>이름</th>
+	        <th>메일</th><th>연령</th></tr>
+	<tr th:each="obj : ${datalist}">
+	        <td th:text="${obj.id}"></td>
+	        <td th:text="${obj.name}"></td>
+	        <td th:text="${obj.mail}"></td>
+	        <td th:text="${obj.age}"></td>
+	</tr>
+	</table>
+</body>
+</html>
