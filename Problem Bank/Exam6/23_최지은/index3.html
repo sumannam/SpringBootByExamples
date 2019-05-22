@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+   점수를 입력하세요: <input type="text" name="score1" /> 
+   점수를 입력하세요: <input type="text" name="score2" /> 
+   점수를 입력하세요: <input type="text" name="score3" /> 
+   점수를 입력하세요: <input type="text" name="score4" /> 
+   점수를 입력하세요: <input type="text" name="score5" /> 
+<input type="submit" value="제출" />
+</form>
+총점:<p th:text="${res1}">please wait...</p>
+평균:<p th:text="${res2}">please wait...</p>
+</body>
+</html>

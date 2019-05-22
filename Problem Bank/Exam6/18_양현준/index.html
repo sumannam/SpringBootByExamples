@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+	<h1>학생 5명의 점수의 총점/평균 구하기</h1>
+	<input type="text" name="num" size="3">
+	<input type="text" name="num" size="3">
+	<input type="text" name="num" size="3">
+	<input type="text" name="num" size="3">
+	<input type="text" name="num" size="3">
+	<input type="submit" value="계산하기" />
+</form>
+
+<p th:text="${res}">
+<p th:text="${res2}">
+</body>
+</html>
