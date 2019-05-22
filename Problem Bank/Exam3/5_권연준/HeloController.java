@@ -33,16 +33,17 @@ public class HeloController {
 	}
 
 	/**
-	 * 	@fn	public ModelAndView send
-	 *	@brief	input box에서 num1, num2를 받아 덧셈/뺄셈/곱셈/나눗셈 계산
+	 * 	@fn			public ModelAndView send
+	 *	@brief		input box에서 num1, num2를 받아 덧셈/뺄셈/곱셈/나눗셈 계산
 	 *	@details
 	 *
-	 *	@author	권연준
-	 *	@date	2019-05-09
+	 *	@author		권연준
+	 *	@date		2019-05-09
 	 *
-	 *	@param	year 현재 년도를 가져옴
-	 *  @param  res 나이
-	 *	@remark 현재에 나이를 알기 위해서 [2019-05-09; 권연준]
+	 *	@param		year 현재 년도를 가져옴
+	 *  @param  	res 나이
+	 *
+	 *	@remark 	현재에 나이를 알기 위해서 [2019-05-09; 권연준]
 	 */
 	
 	@RequestMapping(value="/",method=RequestMethod.POST)

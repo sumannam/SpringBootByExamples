@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+table {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+	<form name = "form1" method="post">
+	<h1>학생 점수 계산기</h1>
+	학생1 : <input type="text" name = "student"/><p>
+	학생2 : <input type="text" name = "student"/><p>
+	학생3 : <input type="text" name = "student"/><p>
+	학생4 : <input type="text" name = "student"/><p>
+	학생5 : <input type="text" name = "student"/><p>
+	
+	<p th:text="${msg}"></p>
+	<p th:text="${msg1}"></p>
+	
+	<input type = "submit" value = "click">
+	<input type = "reset" value = "reset">
+
+	</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+   이름: <input type="text" name="num1" /> 
+   신장: <input type="text" name="num2" /> 
+   몸무게: <input type="text" name="num3" /> 
+<input type="submit" value="산출하기" />
+<input type="reset" value="다시하기" />
+</form>
+BMI:<p th:text="${res1}">please wait...</p>
+상태:<p th:text="${res2}">please wait...</p>
+</body>
+</html>
