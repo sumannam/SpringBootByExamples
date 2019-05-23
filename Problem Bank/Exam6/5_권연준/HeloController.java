@@ -35,7 +35,7 @@ public class HeloController {
 	/**
 	 * 	@fn	public ModelAndView send
 	 *	@brief		input box에서 num값 5개를 받아 배열로 선언한 후 for문을 돌려 합계와 평균 계산
-	 *	@details
+	 *	@details	
 	 *
 	 *	@author		권연준
 	 *	@date		2019-05-16
@@ -50,9 +50,9 @@ public class HeloController {
 	public ModelAndView send(Integer[] num, ModelAndView mav) throws Exception {
         int sum =0;
         double avg = 0;
-		
+        
 		for (int i=0 ; i<num.length ; i++) {
-			sum = sum + num[i];
+			sum += num[i];
 		}
         avg = sum/num.length;
         
