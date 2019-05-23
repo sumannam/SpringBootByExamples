@@ -1,6 +1,5 @@
 package com.jin.springboot;
 
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,6 @@ public class HeloController
         d1.setDatabase(100);
         repository.saveAndFlush(d1);
 	}
-
     
     @Autowired
     MyDataRepository repository;
@@ -58,35 +56,37 @@ public class HeloController
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public ModelAndView edit(@ModelAttribute MyData mydata,
                     @PathVariable int id,ModelAndView mav) {
-            mav.setViewName("edit");
-            mav.addObject("title","edit mydata.");
-            MyData data = repository.findById((long)id).get();
-            mav.addObject("formModel",data);
-            return mav;
+		mav.setViewName("edit");
+		mav.addObject("title","edit mydata.");
+		MyData data = repository.findById((long)id).get();
+		mav.addObject("formModel",data);
+		return mav;
     }
+	
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @Transactional(readOnly=false)
     public ModelAndView update(@ModelAttribute MyData mydata,
                     ModelAndView mav) {
-            repository.saveAndFlush(mydata);
-            return new ModelAndView("redirect:/");
+		repository.saveAndFlush(mydata);
+		return new ModelAndView("redirect:/");
     }
     
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable int id,
                     ModelAndView mav) {
-            mav.setViewName("delete");
-            mav.addObject("title","delete mydata.");
-            MyData data = repository.findById((long)id).get();
-            mav.addObject("formModel",data);
-            return mav;
+		mav.setViewName("delete");
+		mav.addObject("title","delete mydata.");
+		MyData data = repository.findById((long)id).get();
+		mav.addObject("formModel",data);
+		return mav;
     }
+	
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @Transactional(readOnly=false)
     public ModelAndView remove(@RequestParam long id,
                     ModelAndView mav) {
-            repository.deleteById(id);
-            return new ModelAndView("redirect:/");
+		repository.deleteById(id);
+		return new ModelAndView("redirect:/");
     }
 
 
