@@ -48,7 +48,6 @@ public class HeloController {
         @RequestMapping(value="/", method=RequestMethod.POST)
         public ModelAndView send(@RequestParam("num")int[] num,	ModelAndView mav) 
         {
-     
         	int sum = 0;
         	int avg = 0;
         	
@@ -56,13 +55,13 @@ public class HeloController {
         		sum += num.length;
         	}
         	
-        		avg = sum / num.length;
-                	
-        	   mav.addObject("res", "총점은 " + sum);
-        	   mav.addObject("res2", "평균은 " + avg);
-               mav.setViewName("index");
-               
-               return mav;
+			avg = sum / num.length;
+				
+		    mav.addObject("total", "총점은 " + sum);
+		    mav.addObject("average", "평균은 " + avg);
+		    mav.setViewName("index");
+		   
+		    return mav;
         }
 }
 

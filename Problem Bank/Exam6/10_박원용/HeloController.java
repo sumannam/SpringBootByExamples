@@ -26,12 +26,12 @@ public class HeloController {
 		
 		int[] array = {num1,num2,num3,num4,num5};
 		
-		 for(int i = 0; i< array.length; i++){ 
+		for(int i = 0; i< array.length; i++){ 
 			 sum = sum + array[i];
-		 }
-		 avg = sum/(double)5;
+		}
+		avg = sum/(double)5;
 		
-		 mav.addObject("res", "당신이 입력한 값까지의 홀수합은 "+sum+"이고"+"평균은"+avg+"입니다");
+		mav.addObject("res", "당신이 입력한 값까지의 홀수합은 "+sum+"이고"+"평균은"+avg+"입니다");
 		mav.setViewName("index");
 
 		return mav;

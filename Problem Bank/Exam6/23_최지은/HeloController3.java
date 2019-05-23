@@ -49,26 +49,26 @@ public class HeloController3<DataObject> {
 		  			  ,required=false)int score5
 					  ,ModelAndView mav) {		
 			
-			int total = 0;
-			int Average = 0;
+		int total = 0;
+		int Average = 0;
+		
+		ArrayList<Integer> student  = new ArrayList<Integer>();
+		student.add(score1);
+		student.add(score2);
+		student.add(score3);
+		student.add(score4);
+		student.add(score5);
+		
+		for(int i=0; i < student.size(); i++) {
+			total += i;
 			
-			ArrayList<Integer> student  = new ArrayList<Integer>();
-			student.add(score1);
-			student.add(score2);
-			student.add(score3);
-			student.add(score4);
-			student.add(score5);
-			
-			for(int i=0; i < student.size(); i++) {
-				total += i;
-				
-			}
-			Average = total/student.size();
-						
-			mav.addObject("res1", total);
-			mav.addObject("res2", Average);
-			mav.setViewName("index3");
-			return mav;
+		}
+		Average = total/student.size();
+					
+		mav.addObject("total", total);
+		mav.addObject("Average", Average);
+		mav.setViewName("index3");
+		return mav;
 	}
 
 }

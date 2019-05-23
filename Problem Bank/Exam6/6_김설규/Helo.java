@@ -58,9 +58,6 @@ public class Helo
 	@RequestMapping(value="/", method=RequestMethod.POST)
     public ModelAndView send(Integer[] num,
     						 ModelAndView mav){
-		
-		
-		
 		int result = 0;
     	double Average = 0;
     	
@@ -70,8 +67,6 @@ public class Helo
     	
     	Average = result/num.length;
     	
-		
-		
     	String res = String.valueOf(result);
     	String avg = String.valueOf(Average);
     	

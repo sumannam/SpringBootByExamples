@@ -21,7 +21,11 @@ public class HeloController {
 		int sum = 0;
 		int Avg = 0;
 		
-		sum = str1+str2+str3+str4+str5;
+		sum = str1 
+			  + str2 
+			  + str3 
+			  + str4 
+			  + str5;
 		Avg = sum/5;
 		
 		mav.addObject("res", "점수의 총 합계는 : " + sum + "점수의 평균은 : " + Avg);
