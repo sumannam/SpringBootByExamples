@@ -43,7 +43,6 @@ public class HeloController
         d3.setDb(55);
         repository.saveAndFlush(d3);
 	}
-
     
     @Autowired
     MyDataRepository repository;
@@ -73,28 +72,28 @@ public class HeloController
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public ModelAndView edit(@ModelAttribute MyData mydata,
                     @PathVariable int id,ModelAndView mav) {
-            mav.setViewName("edit");
-            mav.addObject("title","edit mydata.");
-            MyData data = repository.findById((long)id).get();
-            mav.addObject("formModel",data);
-            return mav;
+		mav.setViewName( "edit" );
+		mav.addObject( "title", "edit mydata." );
+		MyData data = repository.findById( (long)id ).get();
+		mav.addObject( "formModel", data );
+		return mav;
     }
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @Transactional(readOnly=false)
     public ModelAndView update(@ModelAttribute MyData mydata,
                     ModelAndView mav) {
-            repository.saveAndFlush(mydata);
-            return new ModelAndView("redirect:/");
+		repository.saveAndFlush(mydata);
+		return new ModelAndView("redirect:/");
     }
     
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public ModelAndView delete(@PathVariable int id,
                     ModelAndView mav) {
-            mav.setViewName("delete");
-            mav.addObject("title","delete mydata.");
-            MyData data = repository.findById((long)id).get();
-            mav.addObject("formModel",data);
-            return mav;
+		mav.setViewName("delete");
+		mav.addObject("title","delete mydata.");
+		MyData data = repository.findById((long)id).get();
+		mav.addObject("formModel",data);
+		return mav;
     }
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @Transactional(readOnly=false)
@@ -103,6 +102,4 @@ public class HeloController
             repository.deleteById(id);
             return new ModelAndView("redirect:/");
     }
-
-
 }
