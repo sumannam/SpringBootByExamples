@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>top page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        </style>
+</head>
+<body>
+
+
+        <form method="post" action="/">
+                <input type="text" name="tot5"/><br>
+                5월의 총 사용 요금은 : <p th:text="${sum}"></p><br>
+                2019년 전체 평균은 :<p th:text="${avg}"></p><br>
+                <input type="submit" value="Click" />
+        </form>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>top page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        tr { margin:5px; }
+        th { padding:5px; color:white; background:darkgray; }
+        td { padding:5px; color:black; background:#e0e0ff; }
+        </style>
+</head>
+<body>
+        <h1 th:text="#{content.title}">edit page</h1>
+        <table>
+        <form method="post" action="/edit" th:object="${formModel}">
+        <input type="hidden" name="id" th:value="*{id}" />
+        <tr>
+        <th><label for=name>이름</label></th>
+        <th><label for=classnumber>학번</label></th>
+        <th><label for=java>자바</label></th>
+        <th><label for=springboot>스프링부트</label></th>
+        <th><label for=database>데이터베이스</label></th>
+        </tr>
+        <tr>
+        <td><input type="text" name="name" th:value="*{name}" size=10 /></td>
+        <td><input type="text" name="classnumber" th:value="*{classnumber}" size=10 /></td>
+        <td><input type="text" name="java" th:value="*{java}" size=10/></td>
+        <td><input type="text" name="springboot" th:value="*{springboot}" size=10 /></td>
+        <td><input type="text" name="database" th:value="*{database}" size=10 /></td>
+        <td><input type="submit" value="수정"></input></td>
+		</tr>         
+        </form>
+        </table>
+</body>
+</html>

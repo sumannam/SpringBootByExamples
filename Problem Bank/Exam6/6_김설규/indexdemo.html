@@ -1,0 +1,25 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+       h1 { font-size:18pt; font-weight:bold; color:gray; }
+       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+<form method="post" action="/">
+   1.<input type="text" name="num" /></p>
+   2.<input type="text" name="num" /></p> 
+   3.<input type="text" name="num" /></p>
+   4.<input type="text" name="num" /></p> 
+   5.<input type="text" name="num" /></p>  
+클릭하면 평균과 총점이 <input type="submit" value="Click" />
+</form>
+<p th:text="${res}">총점</p>
+<p th:text="${avg}">평균</p>
+</body>
+</html>

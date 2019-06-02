@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+table {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+	<form name = "form1" method="post">
+	<h1>전력 요금 계산기</h1>
+	5월 사용량 : <input type="text" name = "used"/> kw<p>
+	
+	<p th:text="${month}"></p>
+	<p th:text="${average}"></p>
+	
+	<input type = "submit" value = "click">
+	<input type = "reset" value = "reset">
+
+	</form>
+
+
+</body>
+
+</html>

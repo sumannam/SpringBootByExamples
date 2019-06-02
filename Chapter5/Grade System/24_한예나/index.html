@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>top page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        tr { margin:5px; }
+        th { padding:5px; color:white; background:darkgray; }
+        td { padding:5px; color:black; background:#e0e0ff; }
+        </style>
+</head>
+<body>
+        <h1 th:text="#{content.title}">Helo page</h1>
+        <table>
+        <form method="post" action="/" th:object="${formModel}">
+        <tr><td><label for="name">이름</label></td>
+                <td><input type="text" name="name" th:value="*{name}" /></td></tr>
+        <tr><td><label for="num">학번</label></td>
+                <td><input type="text" name="num"  th:value="*{num}" /></td></tr>
+        <tr><td><label for="java">자바</label></td>
+                <td><input type="text" name="java"  th:value="*{java}" /></td></tr>
+        <tr><td><label for="springboot">스프링부트</label></td>
+        		<td><input type="text" name="springboot"  th:value="*{springboot}" /></td></tr>
+        <tr><td><label for="database">데이터베이스</label></td>
+        		<td><input type="text" name="database"  th:value="*{database}" /></td></tr>
+        <tr><td></td><td><input type="submit" /></td></tr>
+        </form>
+        </table>
+        <hr/>
+        <table>
+        <tr><th>ID</th><th>이름</th><th>학번</th><th>자바</th><th>스프링부트</th><th>데이터베이스</th><th>수정</th><th>삭제</th></tr>
+        <tr th:each="obj : ${datalist}">
+        		<td th:text="${obj.id}"></td>
+                <td th:text="${obj.name}"></td>
+                <td th:text="${obj.num}"></td>
+                <td th:text="${obj.java}"></td>
+                <td th:text="${obj.springboot}"></td>
+                <td th:text="${obj.database}"></td>
+                <td><a th:href="@{'/edit/' + ${obj.id}}">수정</a></td>
+                <td><a th:href="@{'/delete/' + ${obj.id}}">삭제</a></td>
+        </tr>
+        </table>
+</body>
+</html>

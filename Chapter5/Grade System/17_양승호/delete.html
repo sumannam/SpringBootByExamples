@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+        <title>edit page</title>
+        <meta http-equiv="Content-Type"
+                content="text/html; charset=UTF-8" />
+        <style>
+        h1 { font-size:18pt; font-weight:bold; color:gray; }
+        body { font-size:13pt; color:gray; margin:5px 25px; }
+        td { padding:0px 20px; background:#eee;}
+        </style>
+</head>
+<body>
+        <h1 th:text="${title}">Deltete page</h1>
+        <table>
+        <form method="post" action="/delete" th:object="${formModel}">
+                <input type="hidden" name="id" th:value="*{id}" />
+        <tr><td><label for="name">이름</label></td>
+                <td><input type="text" name="name" th:value="*{name}" /></td></tr>
+        <tr><td><label for="num1">학번</label></td>
+                <td><input type="text" name="num1"  th:value="*{num1}" /></td></tr>
+        <tr><td><label for="sub1">자바</label></td>
+                <td><input type="text" name="sub1"  th:value="*{sub1}" /></td></tr>
+		<tr><td><label for="sub2">스프링부트</label></td>
+                <td><input type="text" name="sub2"  th:value="*{sub2}" /></td></tr>
+		<tr><td><label for="sub3">데이터베이스</label></td>
+                <td><input type="text" name="sub3"  th:value="*{sub3}" /></td></tr>
+
+        <tr><td></td><td><input type="submit" /></td></tr>
+        </form>
+        </table>
+</body>
+</html>

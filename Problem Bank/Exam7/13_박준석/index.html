@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>top page</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <style>
+	       h1 { font-size:18pt; font-weight:bold; color:gray; }
+	       body { font-size:13pt; color:gray; margin:5px 25px; }
+       </style>
+</head>
+<body>
+
+<form method="post" action="/">
+	5월 사용량(kw):  <input type=text name="usage" th:value="${value}" /> <br>
+	<input type="submit" value="계산" /><br>
+	
+	<p th:text="${res}"></p>
+</form>
+</body>
+</html>
+

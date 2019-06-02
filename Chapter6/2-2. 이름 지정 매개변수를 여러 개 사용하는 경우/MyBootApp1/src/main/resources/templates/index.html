@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>top page</title>
+	<meta http-equiv="Content-Type"
+	        content="text/html; charset=UTF-8" />
+	<style>
+	h1 { font-size:18pt; font-weight:bold; color:gray; }
+	body { font-size:13pt; color:gray; margin:5px 25px; }
+	tr { margin:5px; }
+	th { padding:5px; color:white; background:darkgray; }
+	td { padding:5px; color:black; background:#e0e0ff; }
+	.err { color:red; }
+	</style>
+</head>
+<body>
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p th:text="${msg}"></p>
+	<table>
+	<tr><th>ID</th><th>이름</th><th>메일</th><th>연령</th><th>메모(tel)</th></tr>
+	<tr th:each="obj : ${datalist}">
+	        <td th:text="${obj.id}"></td>
+	        <td th:text="${obj.name}"></td>
+	        <td th:text="${obj.mail}"></td>
+	        <td th:text="${obj.age}"></td>
+	        <td th:text="${obj.memo}"></td>
+	</tr>
+	</table>
+</body>
+</html>
