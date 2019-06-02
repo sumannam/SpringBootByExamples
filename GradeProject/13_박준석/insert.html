@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>삽입 페이지</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+      <style>
+			h1 { font-size:18pt; font-weight:bold; color:gray; }
+			body { font-size:13pt; color:gray; margin:5px 25px; align:center;}
+			tr { margin:5px; }
+			th { padding:5px; color:white; background:darkgray; }
+			td { padding:5px; color:black; background:#e0e0ff; }
+			table.navi {width:100%; background:white; }
+			table.navi tr { background:white; }
+			table.navi tr td { background:white; }
+			.err { color:red; }
+	  </style>
+</head>
+<body>
+<div align=center>
+	<h2>성적 추가 페이지</h2>
+	<hr>
+<form method="post" action="/insert">
+	<table>
+		<tr>
+			<th>이름</th>
+			<td><input type="text" name="name"/></td>
+		</tr>
+		<tr>
+			<th>학번</th>
+			<td><input type="text" name="classNum"/></td>
+		</tr>
+		<tr>
+			<th>과목1</th>
+			<td><input type="text" name="sub1"/></td>
+		</tr>
+		<tr>
+			<th>과목2</th>
+			<td><input type="text" name="sub2"/></td>
+		</tr>
+		<tr>
+			<th>과목3</th>
+			<td><input type="text" name="sub3"/></td>
+		</tr>
+	</table>
+	<input type="submit" value="저장">&nbsp;<input type="button" value="취소" onClick="location.href='/'">
+</form>
+</div>
+</body>
+</html>

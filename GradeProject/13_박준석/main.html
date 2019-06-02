@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>메인페이지</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+       <style>
+			h1 { font-size:18pt; font-weight:bold; color:gray; }
+			body { font-size:13pt; color:gray; margin:5px 25px; align:center; }
+			tr { margin:5px; }
+			th { padding:5px; color:white; background:darkgray; }
+			td { padding:5px; color:black; background:#e0e0ff; }
+			table.navi {width:100%; background:white; }
+			table.navi tr { background:white; }
+			table.navi tr td { background:white; }
+			.err { color:red; }
+	   </style>
+</head>
+<body>
+<div align=center>
+	<h2>성적 게시 목록</h2>
+	<hr>
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>학번</th>
+			<th>일시</th>
+		</tr>
+		<tr th:each="obj : ${datalist}">
+			<td><a th:href="@{'/edit/' + ${obj.id}}"><p th:text="${obj.name}"></p></a></td>
+			<td><a th:href="@{'/edit/' + ${obj.id}}"><p th:text="${obj.classNum}"></p></a></td>
+			<td p th:text="${obj.date}"></td>
+		</tr>
+	</table>
+		<input type="button" value="입력" onclick="location.href='insert'"/> 
+</div>
+</body>
+</html>
