@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+tr {
+	margin: 5px;
+}
+
+th {
+	padding: 5px;
+	color: white;
+	background: darkgray;
+}
+
+td {
+	padding: 5px;
+	color: black;
+	background: #e0e0ff;
+}
+
+table.navi {
+	width: 100%;
+	background: white;
+}
+
+table.navi tr {
+	background: white;
+}
+
+table.navi tr td {
+	background: white;
+}
+
+.err {
+	color: red;
+}
+.last {
+	background: #FFF;
+}
+
+</style>
+</head>
+<body>
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p th:text="${msg}"></p>
+	<a th:href="@{'/insert'}">성적입력</a>
+	<p>
+	<table>
+		<form method="post" action="/">
+			<input type="hidden" name="id" th:value="*{id}" />
+		<tr>
+			<th>이름</th>
+			<th>학번</th>
+			<th>날짜</th>
+		</tr>
+		<tr th:each="obj : ${datalist}">
+			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.name}"></span></a></td>
+			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.code}"></span></a></td>
+			<td><span th:text="${obj.date}"></span></td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+h1 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: gray;
+}
+
+body {
+	font-size: 13pt;
+	color: gray;
+	margin: 5px 25px;
+}
+
+tr {
+	margin: 5px;
+}
+
+th {
+	padding: 5px;
+	color: white;
+	background: darkgray;
+}
+
+td {
+	padding: 5px;
+	color: black;
+	background: #e0e0ff;
+}
+
+table.navi {
+	width: 100%;
+	background: white;
+}
+
+table.navi tr {
+	background: white;
+}
+
+table.navi tr td {
+	background: white;
+}
+
+.err {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1 th:text="#{content.title}">Helo page</h1>
+	<p th:text="${msg}"></p>
+	
+	<table th:each="obj : ${datalist}">
+		<form method="post" action="/delete">
+		<input type="hidden" name = "id" th:value="${obj.id}" />
+			<tr>
+				<td colspan = "2" height = "70px"><center><h1>삭제</h1></center></td>
+			</tr>
+			<tr>
+				<td colspan = "2" height = "50px" width = "300px" th:text="${obj.name}"></td>
+			</tr>
+			<tr>
+				<td colspan = "2" height = "80px" width = "300px">님의 데이터를 삭제하시겠습니까?</td>
+			</tr>
+			<tr>
+				<td>
+					<center>
+					<input type="submit" value = "삭제"/>
+					</form>
+					<a th:href="@{'/'}"><button>취소</button></a>
+					</center>
+				</td>
+			</tr>
+
+		
+	</table>
+</body>
+</html>
