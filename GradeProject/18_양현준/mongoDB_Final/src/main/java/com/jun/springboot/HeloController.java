@@ -109,6 +109,7 @@ public class HeloController {
 	public ModelAndView romove(@RequestParam("id") String id, ModelAndView mav) {
 		
 		repository.deleteById(id);
+		
 		return new ModelAndView("redirect:/");
 	}
 }

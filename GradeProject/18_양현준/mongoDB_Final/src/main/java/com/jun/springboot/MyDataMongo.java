@@ -57,100 +57,61 @@ public class MyDataMongo {
 	public String getId() {
 		return id;
 	}
-
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
 	public String getName() {
 		return name;
 	}
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-
 	public String geteMail() {
 		return eMail;
 	}
-
-
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
 	}
-
-
 	public String getPhonenumber() {
 		return phonenumber;
 	}
-
-
 	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
-
-
 	public String getResult() {
 		return result;
 	}
-
-
 	public void setResult(String result) {
 		this.result = result;
 	}
-
-
 	public Date getDate() {
 		return date;
 	}
-
-
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
-
 	public int getAge() {
 		return age;
 	}
-
-
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-
 	public double getTall() {
 		return tall;
 	}
-
-
 	public void setTall(double tall) {
 		this.tall = tall;
 	}
-
-
 	public double getWeight() {
 		return weight;
 	}
-
-
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
-
-
 	public double getBmi() {
 		return bmi;
 	}
-
-
 	public void setBmi(double bmi) {
 		this.bmi = bmi;
 	}
-	
 }
