@@ -190,7 +190,7 @@ public class HeloController {
 	
 	/**
 	 *
-	 * @fn 		public ModelAndView delete(ModelAndView mav)
+	 * @fn 		public ModelAndView deletecheck(ModelAndView mav)
 	 * 
 	 * @brief 	삭제 페이지 설정 
 	 *
@@ -203,7 +203,7 @@ public class HeloController {
 	 */
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-	public ModelAndView romovecheck(@PathVariable("id") String id, ModelAndView mav) {
+	public ModelAndView deletecheck(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("delete");
 		mav.addObject("title", "Delete");
 		mav.addObject("msg", "정말로 삭제하시겠습니까?");
@@ -214,8 +214,23 @@ public class HeloController {
 		
 		return mav;
 	}
+	
+	/**
+	 *
+	 * @fn 		public ModelAndView delete(ModelAndView mav)
+	 * 
+	 * @brief 	삭제 페이지 설정 
+	 *
+	 * @author 	양현준
+	 * @date 	2019-06-17
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark 	deleteById를 통해 데이터 삭제	   [2019-06-17; 양현준]
+	 */
+	
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-	public ModelAndView romove(@RequestParam("id") String id, ModelAndView mav) {
+	public ModelAndView delete(@RequestParam("id") String id, ModelAndView mav) {
 		
 		repository.deleteById(id);
 		
