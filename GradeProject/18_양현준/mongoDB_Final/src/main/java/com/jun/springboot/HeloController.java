@@ -32,6 +32,7 @@ public class HeloController {
 	}
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public ModelAndView insert(ModelAndView mav) {
+		
 		mav.setViewName("insert");
 		mav.addObject("title", "회원 가입");
 		mav.addObject("msg", "회원 정보를 작성해주세요.");
@@ -45,9 +46,7 @@ public class HeloController {
 			@RequestParam("phonenumber") String phonenumber,
 			@RequestParam("age") int age,
 			@RequestParam("tall") double tall, 
-			@RequestParam("weight") double weight,
-			
-			ModelAndView mov) 
+			@RequestParam("weight") double weight, ModelAndView mov) 
 	{
 		MyDataMongo mydata = new MyDataMongo(name, eMail, phonenumber, age, tall, weight);
 		repository.save(mydata);
@@ -56,6 +55,7 @@ public class HeloController {
 	}
 	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
 	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
+		
 		mav.setViewName("detail");
 		mav.addObject("title", "Detail Page");
 		mav.addObject("msg", "회원 정보 상세 조회");
