@@ -9,7 +9,7 @@ body {
 	color: gray;
 	display : table;
 	margin : 0 auto;
-	margin-top : 280px;
+	margin-top : 230px;
 }
 tr {
 	margin: 5px;
@@ -22,7 +22,14 @@ th {
 td {
 	padding: 5px;
 	color: black;
-	background: #afd4d6;
+	background: #b4afd6;
+}
+td:first-child {
+	text-align : center;
+	font-weight : bold;
+}
+tr:last-child {
+	text-align : right;
 }
 table.navi {
 	width: 100%;
@@ -39,18 +46,27 @@ table.navi tr td {
 	background: #FFF;
 }
 .container {
-	text-align: center;
+	text-align:
+}
+p {
+	text-align : center;
+	font-size: 13pt;
+}
+span {
+	text-align : center;
+	font-size : 10pt;
+	color : #808080;
 }
 </style>
 
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-
 	<table th:each="obj : ${datalist}">
 		<form method="post" action="/detail/{id}">
 			<input type="hidden" th:value="${obj.id}" />
+		<tr>
+			<th colspan=2><p th:text="${msg}"></p></th>
+		</tr>
 		<tr>
 			<td>이름</td>
 			<td th:text="${obj.name}"></td>
@@ -69,7 +85,7 @@ table.navi tr td {
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td th:text="${obj.age}"></td>
+			<td th:text="${obj.age}">세</td>
 		</tr>
 		<tr>
 			<td>키</td>
