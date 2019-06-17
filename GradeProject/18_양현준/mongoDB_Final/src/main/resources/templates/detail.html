@@ -85,7 +85,7 @@ span {
 		</tr>
 		<tr>
 			<td>나이</td>
-			<td th:text="${obj.age}">세</td>
+			<td th:text="${obj.age}"></td>
 		</tr>
 		<tr>
 			<td>키</td>
@@ -100,8 +100,15 @@ span {
 			<td th:text="${obj.bmi}"></td>
 		</tr>
 		<tr>
+			<td>측정 결과</td>
+			<td th:text="${obj.result}"></td>
+		</tr>
+		<tr>
 			<td>작성날짜</td>
 			<td th:text="${obj.date}"></td>
+		</tr>
+		<tr>
+			<td colspan=2><span>기본적인 단위는 나이(세), 키(cm), 몸무게(kg)를 의미함.</span></td>
 		</tr>
 		</form>
 		<tr>

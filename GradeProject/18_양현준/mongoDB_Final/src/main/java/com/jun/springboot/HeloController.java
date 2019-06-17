@@ -43,13 +43,13 @@ public class HeloController {
 			@RequestParam("name") String name,
 			@RequestParam("eMail") String eMail,
 			@RequestParam("phonenumber") String phonenumber,
-			@RequestParam("tall") int tall, 
-			@RequestParam("weight") int weight,
-			@RequestParam("age") int age, 
+			@RequestParam("age") int age,
+			@RequestParam("tall") double tall, 
+			@RequestParam("weight") double weight,
 			
 			ModelAndView mov) 
 	{
-		MyDataMongo mydata = new MyDataMongo(name, eMail, phonenumber, tall, weight, age);
+		MyDataMongo mydata = new MyDataMongo(name, eMail, phonenumber, age, tall, weight);
 		repository.save(mydata);
 		
 		return new ModelAndView("redirect:/");
@@ -58,12 +58,13 @@ public class HeloController {
 	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("detail");
 		mav.addObject("title", "Detail Page");
-		mav.addObject("msg", "회원 정보 상세 조회 및 수정 삭제");
+		mav.addObject("msg", "회원 정보 상세 조회");
 
 		List<MyDataMongo> list = repository.findById(id);
 		mav.addObject("datalist", list);
 		
 		return mav;
 	}
+	
 
 }
