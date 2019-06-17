@@ -187,6 +187,21 @@ public class HeloController {
 		
 		return new ModelAndView("redirect:/");
 	}
+	
+	/**
+	 *
+	 * @fn 		public ModelAndView delete(ModelAndView mav)
+	 * 
+	 * @brief 	삭제 페이지 설정 
+	 *
+	 * @author 	양현준
+	 * @date 	2019-06-17
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark 	findById를 통해 해당 게시글에 대한 삭제 유무 확인	   [2019-06-17; 양현준]
+	 */
+	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public ModelAndView romovecheck(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("delete");
