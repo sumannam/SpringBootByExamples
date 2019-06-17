@@ -154,6 +154,7 @@ public class HeloController {
 		
 		return mav;
 	}
+	
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
 			@RequestParam("id") String id,
@@ -166,6 +167,7 @@ public class HeloController {
 	{
 		MyDataMongo mydata = new MyDataMongo(name, eMail, phonenumber, age, tall, weight);
 		repository.save(mydata);
+		repository.deleteById(id);
 		
 		return new ModelAndView("redirect:/");
 	}
