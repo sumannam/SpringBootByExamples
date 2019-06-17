@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>top page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+body {
+	font-size: 13pt;
+	color: gray;
+	display : table;
+	margin : 0 auto;
+	margin-top : 250px;
+}
+tr {
+	margin: 5px;
+}
+th {
+	padding: 10px;
+	color: white;
+	background: #808080;
+	colsapn : 2;
+}
+td {
+	padding: 5px;
+	color: black;
+	background: #b4afd6;
+}
+td:first-child {
+	text-align : center;
+	font-weight : bold;
+}
+tr:last-child {
+	text-align : right;
+}
+table.navi {
+	width: 100%;
+	background: black;
+}
+table.navi tr {
+	background: black;
+}
+
+table.navi tr td {
+	background: black;
+}
+.last {
+	background: #FFF;
+}
+.container {
+	text-align:
+}
+p {
+	text-align : center;
+	font-size: 13pt;
+}
+span {
+	text-align : center;
+	font-size : 10pt;
+	color : #808080;
+}
+</style>
+</head>
+<body>	
+	<table>
+		<form method="post" action="/edit">
+		<input type="hidden" name="id" th:value="${obj.id}" />
+			<tr>
+				<th colspan="2"><p th:text="${msg}"></p></th>
+			</tr>
+			<tr>
+				<td colspan="2">요단강에 오신 것을 환영합니다.</td>
+			</tr>
+			<tr>
+				<td colspan="2" th:text="${obj.name}"></td>
+			</tr>
+			<tr>
+				<td colspan="2">건너시겠습니까?</td>
+			</tr>
+			<tr>
+				<td colspan=2>
+					<input type="submit" value = "건너기"/>
+					</form>
+					<a th:href="@{'/'}"><button>돌아가기</button></a>
+				</td>
+			</tr>
+	</table>
+</body>
+</html>
