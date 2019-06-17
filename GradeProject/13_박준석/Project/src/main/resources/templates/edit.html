@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>수정페이지</title>
+       <meta http-equiv="Content-Type"
+               content="text/html; charset=UTF-8" />
+      <style>
+			h1 { font-size:18pt; font-weight:bold; color:gray; }
+			body { font-size:13pt; color:gray; margin:5px 25px; align:center;}
+			tr { margin:5px; }
+			th { padding:5px; color:white; background:darkgray; }
+			td { padding:5px; color:black; background:#e0e0ff; }
+			table.navi {width:100%; background:white; }
+			table.navi tr { background:white; }
+			table.navi tr td { background:white; }
+			.err { color:red; }
+	  </style>
+	  
+	  <script src=" http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	  <script>
+	  	$(document).ready(function(){
+	  		
+	  		$('#delete').on('click', function(){
+	  			$('#edit').attr('action', '/delete');
+	  		});
+	  		
+	  		$('#update').on('click', function(){
+	  			$('#edit').attr('action', '/update');
+	  		});
+	  		
+	  	});
+	  </script>
+</head>
+<body>
+<div align=center>
+	<h2>수정페이지</h2>
+	<hr>
+<form id="edit" method="post" action="/update" th:object="${getlist}">
+	<input type="hidden" name="id" th:value="*{id}"/>
+	<table>
+		<tr>
+			<th>이름</th>
+			<td><input type="text" name="name" th:value="${getlist.name}"/></td>
+		</tr>
+		<tr>
+			<th>학번</th>
+			<td><input type="text" name="classNum" th:value="${getlist.classNum}"></td>
+		</tr>
+		<tr>
+			<th>과목1</th>
+			<td><input type="text" name="sub1" th:value="${getlist.sub1}"></td>
+		</tr>
+		<tr>
+			<th>과목2</th>
+			<td><input type="text" name="sub2" th:value="${getlist.sub2}"></td>
+		</tr>
+		<tr>
+			<th>과목3</th>
+			<td><input type="text" name="sub3" th:value="${getlist.sub3}"></td>
+		</tr>
+		<tr>
+			<th>총점</th>
+			<td th:text="${getlist.sum}"></td>
+		</tr>
+		<tr>
+			<th>평균</th>
+			<td th:text="${getlist.avg}"></td>
+		</tr>
+		<tr>
+			<th>일자</th>
+			<td th:text="${getlist.date}"></td>
+		</tr>
+	</table>
+	<input type="submit" id="update" value="수정">&nbsp;<input type="submit" id="delete" value="삭제" >&nbsp;<input type="button" value="목록" onClick="location.href='/'">
+</form>
+</div>
+	
+</body>
+</html>
