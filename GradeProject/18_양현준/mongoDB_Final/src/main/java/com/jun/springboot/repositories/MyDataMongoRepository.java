@@ -9,4 +9,5 @@ import com.jun.springboot.MyDataMongo;
 public interface MyDataMongoRepository extends MongoRepository<MyDataMongo, Long> 
 {
 	public List<MyDataMongo> findById(String A);
+	public void deleteById(String id);
 }
