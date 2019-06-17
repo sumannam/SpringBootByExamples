@@ -63,7 +63,7 @@ span {
 <body>
 	<table th:each="obj : ${datalist}">
 		<form method="post" action="/detail/{id}">
-			<input type="hidden" th:value="${obj.id}" />
+		<input type="hidden" th:value="${obj.id}" />
 		<tr>
 			<th colspan=2><p th:text="${msg}"></p></th>
 		</tr>
@@ -126,7 +126,6 @@ span {
 				</center>
 			</td>
 		</tr>
-
 	</table>
 </body>
 </html>
