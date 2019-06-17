@@ -126,6 +126,21 @@ public class HeloController {
 		
 		return mav;
 	}
+	
+	/**
+	 *
+	 * @fn 		public ModelAndView edit(ModelAndView mav)
+	 * 
+	 * @brief 	수정 페이지 설정 
+	 *
+	 * @author 	양현준
+	 * @date 	2019-06-17
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark 	findById로 조건 검색 후 페이지에 출력 		[2019-06-17; 양현준]
+	 */
+	
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
 	public ModelAndView edit(@PathVariable("id") String id, ModelAndView mav) {
 		
