@@ -11,6 +11,7 @@ public class MyDataMongo {
 	
 	private String name;
 	private String eMail;
+	private String phonenumber;
 	private Date date;
 	
 	private int age;
@@ -19,11 +20,12 @@ public class MyDataMongo {
 	private double bmi;
 	
 	
-	public MyDataMongo(String name, String eMail, int tall, int weight, double bmi) {
+	public MyDataMongo(String name, String eMail, String phonenumber ,int tall, int weight, double bmi) {
 
 		super();
 		this.name = name;
 		this.date = new Date();
+		this.phonenumber = phonenumber;
 		this.eMail = eMail;
 		this.tall = tall;
 		this.weight = weight;
@@ -61,6 +63,16 @@ public class MyDataMongo {
 	}
 
 
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+
+
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+
+
 	public Date getDate() {
 		return date;
 	}
@@ -79,6 +91,8 @@ public class MyDataMongo {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+
 	public int getTall() {
 		return tall;
 	}
