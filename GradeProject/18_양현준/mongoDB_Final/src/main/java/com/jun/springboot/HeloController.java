@@ -155,6 +155,22 @@ public class HeloController {
 		return mav;
 	}
 	
+	/**
+	 *
+	 * @fn 		public ModelAndView editpost(ModelAndView mav)
+	 * 
+	 * @brief 	수정 페이지 설정 
+	 *
+	 * @author 	양현준
+	 * @date 	2019-06-17
+	 *
+	 * @param 	mav ModelAndView
+	 *
+	 * @remark 	html 폼에 입력된 값을 받아온 후 객체에 저장			   [2019-06-17; 양현준]
+	 * 			repository.save를 통해 받아온 객체 DB에 저장 	   [2019-06-17; 양현준]
+	 * 			repository.deleteById를 통해 기존에 있던 데이터 삭제 [2019-06-17; 양현준]
+	 */
+	
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
 			@RequestParam("id") String id,
