@@ -61,8 +61,8 @@ span {
 </style>
 </head>
 <body>	
-	<table>
-		<form method="post" action="/edit">
+	<table th:each="obj : ${datalist}">
+		<form method="post" action="/delete" />
 		<input type="hidden" name="id" th:value="${obj.id}" />
 			<tr>
 				<th colspan="2"><p th:text="${msg}"></p></th>
@@ -74,7 +74,7 @@ span {
 				<td colspan="2" th:text="${obj.name}"></td>
 			</tr>
 			<tr>
-				<td colspan="2">건너시겠습니까?</td>
+				<td colspan="2">님 건너시겠습니까?</td>
 			</tr>
 			<tr>
 				<td colspan=2>
