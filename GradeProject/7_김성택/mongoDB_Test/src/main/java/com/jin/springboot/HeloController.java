@@ -98,7 +98,7 @@ public class HeloController {
 			@RequestParam("monitor") int monitor, 
 			ModelAndView mav) 
 	{
-		MyDataMongo mydata = new MyDataMongo(code,name,boardTitle,boardContent,pc,laptop,monitor);
+		MyDataMongo mydata = new MyDataMongo(code, name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
 		
 		return new ModelAndView("redirect:/");
@@ -225,14 +225,17 @@ public class HeloController {
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
-			@RequestParam("id") String id, 
-			@RequestParam("code") String code,
-			@RequestParam("name") String name, 
-			@RequestParam("Java") int Java,
-			@RequestParam("SpringBoot") int SpringBoot, 
-			@RequestParam("DataBase") int DataBase, ModelAndView mov) 
+			@RequestParam("id") String id,
+			@RequestParam("code") String code, 
+			@RequestParam("name") String name,
+			@RequestParam("boardtitle") String boardTitle,
+			@RequestParam("boardcontent") String boardContent,
+			@RequestParam("pc") int pc, 
+			@RequestParam("laptop") int laptop,
+			@RequestParam("monitor") int monitor, 
+			ModelAndView mav) 
 	{
-		MyDataMongo mydata = new MyDataMongo(name, code, Java, SpringBoot, DataBase);
+		MyDataMongo mydata = new MyDataMongo(code, name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
 		repository.deleteById(id);
 		

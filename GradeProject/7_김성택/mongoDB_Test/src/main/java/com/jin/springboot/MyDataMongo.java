@@ -13,29 +13,29 @@ public class MyDataMongo {
 	private String name;
 	private String boardTitle;
 	private String boardContent;
-	private String pc;
-	private String laptop;
-	private String monitor;
-	
+
 	private Date date;
-
-	private int Java;
-	private int SpringBoot;
-	private int DataBase;
-	private int Amount;
-	private int Average;
-
-	public MyDataMongo(String name, String code, int Java, int SpringBoot, int DataBase) {
+	
+	private int pc;
+	private int laptop;
+	private int monitor;
+	private int amount;
+	private int discount;
+	
+	
+	public MyDataMongo(String code, String name, String boardTitle, String boardContent, int pc, int laptop, int monitor) {
 
 		super();
-		this.name = name;
 		this.code = code;
+		this.name = name;
+		this.boardTitle = boardTitle;
+		this.boardContent = boardContent;
 		this.date = new Date();
-		this.Java = Java;
-		this.SpringBoot = SpringBoot;
-		this.DataBase = DataBase;
-		this.Amount = Java + SpringBoot + DataBase;
-		this.Average = Amount / 3;
+		this.pc = pc;
+		this.laptop = laptop;
+		this.monitor = monitor;
+		this.amount = pc + laptop + monitor;
+		this.discount = amount % 90;
 	}
 
 
@@ -43,72 +43,111 @@ public class MyDataMongo {
 		return id;
 	}
 
+
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getCode() {
 		return code;
 	}
 
+
 	public void setCode(String code) {
 		this.code = code;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getBoardTitle() {
+		return boardTitle;
+	}
+
+
+	public void setBoardTitle(String boardTitle) {
+		this.boardTitle = boardTitle;
+	}
+
+
+	public String getBoardContent() {
+		return boardContent;
+	}
+
+
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
+	}
+
 
 	public Date getDate() {
 		return date;
 	}
 
+
 	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	public int getJava() {
-		return Java;
+
+	public int getPc() {
+		return pc;
 	}
 
-	public void setJava(int java) {
-		Java = java;
+
+	public void setPc(int pc) {
+		this.pc = pc;
 	}
 
-	public int getSpringBoot() {
-		return SpringBoot;
+
+	public int getLaptop() {
+		return laptop;
 	}
 
-	public void setSpringBoot(int springBoot) {
-		SpringBoot = springBoot;
+
+	public void setLaptop(int laptop) {
+		this.laptop = laptop;
 	}
 
-	public int getDataBase() {
-		return DataBase;
+
+	public int getMonitor() {
+		return monitor;
 	}
 
-	public void setDataBase(int dataBase) {
-		DataBase = dataBase;
+
+	public void setMonitor(int monitor) {
+		this.monitor = monitor;
 	}
+
 
 	public int getAmount() {
-		return Amount;
+		return amount;
 	}
+
 
 	public void setAmount(int amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 
-	public int getAverage() {
-		return Average;
+
+	public int getDiscount() {
+		return discount;
 	}
 
-	public void setAverage(int average) {
-		Average = average;
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
 	}
+
+
 
 }
