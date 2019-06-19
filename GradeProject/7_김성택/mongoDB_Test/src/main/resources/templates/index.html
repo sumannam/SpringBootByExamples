@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>견적상담하기</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="board.css" type="text/css" media="screen" />
+</head>
+<body>
+	<div align=center>
+	<h2>견적상담하기</h2>
+	<hr>
+	<p>
+	<table>
+		<form method="post" action="/">
+			<input type="hidden" name="id" th:value="*{id}" />
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+		</tr>
+		<tr th:each="obj : ${datalist}">
+			<td><span th:text="${obj.code}"></span></td>
+			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.code}"></span></a></td>
+			<td><span th:text="${obj.name}"></span></td>
+			<td><span th:text="${obj.date}"></span></td>
+		</tr>
+		<tr>
+			<td colspan=4>
+				<a th:href="@{'/insert'}">글쓰기</a>
+				<a th:href="@{'/insert'}">실시간상담</a>
+			</td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>
