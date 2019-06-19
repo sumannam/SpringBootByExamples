@@ -38,8 +38,6 @@ public class HeloController {
 	public ModelAndView index(ModelAndView mav) {
 
 		mav.setViewName("index");
-		mav.addObject("title", "성적 계산기");
-		mav.addObject("msg", "성적을 입력해주세요.");
 
 		Iterable<MyDataMongo> list = repository.findAll();
 		mav.addObject("datalist", list);
@@ -65,9 +63,6 @@ public class HeloController {
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public ModelAndView insert(ModelAndView mav) {
 		mav.setViewName("insert");
-		mav.addObject("title", "입력 페이지");
-		mav.addObject("msg", "데이터를 입력해주세요");
-
 		return mav;
 	}
 		
@@ -88,17 +83,16 @@ public class HeloController {
 	 */
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public ModelAndView form(
-			@RequestParam("code") String code, 
+	public ModelAndView form( 
 			@RequestParam("name") String name,
-			@RequestParam("boardtitle") String boardTitle,
-			@RequestParam("boardcontent") String boardContent,
+			@RequestParam("boardTitle") String boardTitle,
+			@RequestParam("boardContent") String boardContent,
 			@RequestParam("pc") int pc, 
 			@RequestParam("laptop") int laptop,
 			@RequestParam("monitor") int monitor, 
-			ModelAndView mav) 
+			ModelAndView mov) 
 	{
-		MyDataMongo mydata = new MyDataMongo(code, name, boardTitle, boardContent, pc, laptop, monitor);
+		MyDataMongo mydata = new MyDataMongo(name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
 		
 		return new ModelAndView("redirect:/");
@@ -122,8 +116,6 @@ public class HeloController {
 	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
 	public ModelAndView detail(@PathVariable("id") String id, ModelAndView mav) {
 		mav.setViewName("detail");
-		mav.addObject("title", "Detail Page");
-		mav.addObject("msg", "상세 조회 및 수정 삭제");
 
 		List<MyDataMongo> list = repository.findById(id);
 		mav.addObject("datalist", list);
@@ -225,17 +217,16 @@ public class HeloController {
 	
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	public ModelAndView editpost(
-			@RequestParam("id") String id,
-			@RequestParam("code") String code, 
+			@RequestParam("id") String id, 
 			@RequestParam("name") String name,
-			@RequestParam("boardtitle") String boardTitle,
-			@RequestParam("boardcontent") String boardContent,
+			@RequestParam("boardTitle") String boardTitle,
+			@RequestParam("boardContent") String boardContent,
 			@RequestParam("pc") int pc, 
 			@RequestParam("laptop") int laptop,
 			@RequestParam("monitor") int monitor, 
-			ModelAndView mav) 
+			ModelAndView mov) 
 	{
-		MyDataMongo mydata = new MyDataMongo(code, name, boardTitle, boardContent, pc, laptop, monitor);
+		MyDataMongo mydata = new MyDataMongo(name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
 		repository.deleteById(id);
 		

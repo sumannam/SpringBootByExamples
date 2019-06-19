@@ -9,7 +9,6 @@ public class MyDataMongo {
 
 	private String id;
 	
-	private String code;
 	private String name;
 	private String boardTitle;
 	private String boardContent;
@@ -23,10 +22,9 @@ public class MyDataMongo {
 	private int discount;
 	
 	
-	public MyDataMongo(String code, String name, String boardTitle, String boardContent, int pc, int laptop, int monitor) {
+	public MyDataMongo(String name, String boardTitle, String boardContent, int pc, int laptop, int monitor) {
 
 		super();
-		this.code = code;
 		this.name = name;
 		this.boardTitle = boardTitle;
 		this.boardContent = boardContent;
@@ -48,15 +46,6 @@ public class MyDataMongo {
 		this.id = id;
 	}
 
-
-	public String getCode() {
-		return code;
-	}
-
-
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 
 	public String getName() {

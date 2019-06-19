@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jin.springboot</groupId>
-	<artifactId>mongoDB_Test</artifactId>
+	<artifactId>kst</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mongoDB_Test</name>
+	<name>kst</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

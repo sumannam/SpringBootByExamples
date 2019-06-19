@@ -58,24 +58,28 @@ table.navi tr td {
 		<form method="post" action="/insert">
 		<input type="hidden" name="id" th:value="*{id}" />
 			<tr>
-				<td><label for="name">이름</label></td>
+				<td><label for="boardTitle">제목</label></td>
+				<td><input type="text" name="boardTitle" /></td>
+			</tr>
+			<tr>
+				<td><label for="boardContent">내용</label></td>
 				<td><input type="text" name="boardContent" /></td>
 			</tr>
 			<tr>
-				<td><label for="code">학번</label></td>
-				<td><input type="text" name="code" /></td>
+				<td><label for="name">이름</label></td>
+				<td><input type="text" name="name" /></td>
 			</tr>
 			<tr>
-				<td><label for="Java">자바</label></td>
-				<td><input type="text" name="Java" /></td>
+				<td><label for="pc">pc</label></td>
+				<td><input type="text" name="pc" /></td>
 			</tr>
 			<tr>
-				<td><label for="SpringBoot">스프링부트</label></td>
-				<td><input type="text" name="SpringBoot" /></td>
+				<td><label for="laptop">노트북</label></td>
+				<td><input type="text" name="laptop" /></td>
 			</tr>
 			<tr>
-				<td><label for="DataBase">데이터베이스</label></td>
-				<td><input type="text" name="DataBase" /></td>
+				<td><label for="monitor">모니터</label></td>
+				<td><input type="text" name="monitor" /></td>
 			</tr>
 			<tr>
 				<td></td>
