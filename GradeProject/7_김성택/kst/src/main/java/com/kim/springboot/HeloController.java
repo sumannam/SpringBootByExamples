@@ -24,13 +24,13 @@ public class HeloController {
 	 * 
 	 * @brief 	메인 페이지 설정 
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정		[2019-06-05; 강석진] \n
-	 * 		   	FinaAll()를 이용해 list에 모든 데이터를 저장	[2019-06-05; 강석진] \n
+	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정		[2019-06-20; 김성택] \n
+	 * 		   	FinaAll()를 이용해 list에 모든 데이터를 저장	[2019-06-20; 김성택] \n
 	 *
 	 */
 
@@ -51,12 +51,12 @@ public class HeloController {
 	 * 
 	 * @brief 	입력 페이지 설정 
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param	mav ModelAndView
 	 *
-	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정[2019-06-05; 강석진] \n
+	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정[2019-06-20; 김성택] \n
 	 *
 	 */
 	
@@ -72,13 +72,13 @@ public class HeloController {
 	 * 
 	 * @brief 	입력 페이지 설정 
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장		[2019-06-05; 강석진] \n
-	 *		   	save 메소드를 이용해 DB에 저장			[2019-06-05; 강석진] \n
+	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장		[2019-06-20; 김성택] \n
+	 *		   	save 메소드를 이용해 DB에 저장			[2019-06-20; 김성택] \n
 	 *
 	 */
 	
@@ -104,12 +104,12 @@ public class HeloController {
 	 * 
 	 * @brief 	상세 조회 페이지
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	findBy 를 이용한 조건검색 후 출력	[2019-06-05; 강석진] \n
+	 * @remark	findBy 를 이용한 조건검색 후 출력	[2019-06-20; 김성택] \n
 	 *
 	 */
 	
@@ -128,12 +128,12 @@ public class HeloController {
 	 * 
 	 * @brief 	삭제 유무 확인페이지
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	findBy 를 이용한 조건검색 후 삭제 유무 확인페이지 출력	[2019-06-05; 강석진] \n
+	 * @remark	findBy 를 이용한 조건검색 후 삭제 유무 확인페이지 출력	[2019-06-20; 김성택] \n
 	 *
 	 */
 
@@ -154,12 +154,12 @@ public class HeloController {
 	 * 
 	 * @brief 	데이터 삭제
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	deleteBy 를 이용한 데이터 조건삭제	[2019-06-05; 강석진] \n
+	 * @remark	deleteBy 를 이용한 데이터 조건삭제	[2019-06-20; 김성택] \n
 	 *
 	 */
 	
@@ -175,12 +175,12 @@ public class HeloController {
 	 * 
 	 * @brief 	수정페이지
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	findBy를 이용해 조건에 충족되는 데이터를 List에 저장 후 화면에 표시	[2019-06-05; 강석진] \n
+	 * @remark	findBy를 이용해 조건에 충족되는 데이터를 List에 저장 후 화면에 표시	[2019-06-20; 김성택] \n
 	 *
 	 */
 	
@@ -204,14 +204,14 @@ public class HeloController {
 	 * 
 	 * @brief 	데이터 수정
 	 *
-	 * @author 	강석진
-	 * @date 	2019-06-05
+	 * @author 	김성택
+	 * @date 	2019-06-20
 	 *
 	 * @param 	mav ModelAndView
 	 *
-	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장	[2019-06-05; 강석진] \n
-	 *		   	save 메소드를 이용해 DB에 저장		[2019-06-05; 강석진] \n
-	 *			deleteBy를 이용해 이전데이터 삭제	[2019-06-05; 강석진] \n
+	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장	[2019-06-20; 김성택] \n
+	 *		   	save 메소드를 이용해 DB에 저장		[2019-06-20; 김성택] \n
+	 *			deleteBy를 이용해 이전데이터 삭제	[2019-06-20; 김성택] \n
 	 *
 	 */
 	
