@@ -11,10 +11,9 @@
 .bbsListTbl th {border-bottom:1px solid #ccc; background:#f0f3fa;}
 .bbsListTbl td {text-align:center; line-height:1.3; border-bottom:1px solid #ccc;}
 .bbsListTbl td.tit_notice {text-align:center;}
-.bbsListTbl td:nth-child(1) {width:10%;}
-.bbsListTbl td:nth-child(2) {width:55%;}
-.bbsListTbl td:nth-child(3) {width:15%;}
-.bbsListTbl td:nth-child(4) {width:20%;}
+.bbsListTbl td:nth-child(1) {width:60%;}
+.bbsListTbl td:nth-child(2) {width:20%;}
+.bbsListTbl td:nth-child(3) {width:20%;}
 
 /* 공지사항 상세보기 */
 .bbsview_list {width:1050px; margin:0 auto; padding-bottom:30px;  border-top:2px solid #384d75; text-align:left; list-style:none;}
@@ -45,19 +44,17 @@ input[type="submit"],[type="reset"],[type="button"] {
 		<form method="post" action="/">
 			<input type="hidden" name="id" th:value="*{id}" />
 		<tr>
-			<th>최종가격</th>
 			<th>제목</th>
 			<th>이름</th>
 			<th>요청날짜</th>
 		</tr>
 		<tr th:each="obj : ${datalist}">
-			<td><span th:text="${obj.discount}"></span></td>
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.boardTitle}"></span></a></td>
 			<td><span th:text="${obj.name}"></span></td>
 			<td><span th:text="${obj.date}"></span></td>
 		</tr>
 		<tr>
-			<td colspan=4 align=right>
+			<td colspan=3 align=right>
     				<a th:href="@{'/insert'}">글쓰기</a>
     				<a th:href="@{'/insert'}">성적입력</a>
 			</td>
