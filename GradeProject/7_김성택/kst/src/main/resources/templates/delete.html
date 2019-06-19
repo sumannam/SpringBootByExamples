@@ -40,7 +40,7 @@ input[type="submit"],[type="reset"],[type="button"] {
 	<h1 th:text="#{content.title}">Helo page</h1>
 	<p th:text="${msg}"></p>
 	
-	<table th:each="obj : ${datalist}">
+	<table th:each="obj : ${datalist}" class="bbsListTbl">
 		<form method="post" action="/delete">
 		<input type="hidden" name = "id" th:value="${obj.id}" />
 			<tr>
