@@ -90,7 +90,7 @@ public class HeloController {
 			@RequestParam("pc") int pc, 
 			@RequestParam("laptop") int laptop,
 			@RequestParam("monitor") int monitor, 
-			ModelAndView mov) 
+			ModelAndView mav) 
 	{
 		MyDataMongo mydata = new MyDataMongo(name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
@@ -222,7 +222,7 @@ public class HeloController {
 			@RequestParam("pc") int pc, 
 			@RequestParam("laptop") int laptop,
 			@RequestParam("monitor") int monitor, 
-			ModelAndView mov) 
+			ModelAndView mav) 
 	{
 		MyDataMongo mydata = new MyDataMongo(name, boardTitle, boardContent, pc, laptop, monitor);
 		repository.save(mydata);
