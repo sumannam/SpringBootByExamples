@@ -4,58 +4,44 @@
 <title>top page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style>
-h1 {
-	font-size: 18pt;
-	font-weight: bold;
-	color: gray;
+@CHARSET "UTF-8";
+
+.bbsListTbl {width:1050px; margin:0 auto; border-top:2px solid #384d75;}
+.bbsListTbl th, .bbsListTbl td {padding:10px; box-sizing:border-box; height:55px;}
+.bbsListTbl th {border-bottom:1px solid #ccc; background:#f0f3fa;}
+.bbsListTbl td {text-align:center; line-height:1.3; border-bottom:1px solid #ccc;}
+.bbsListTbl td.tit_notice {text-align:center;}
+.bbsListTbl td:nth-child(1) {width:10%;}
+.bbsListTbl td:nth-child(2) {width:55%;}
+.bbsListTbl td:nth-child(3) {width:15%;}
+.bbsListTbl td:nth-child(4) {width:20%;}
+
+/* 공지사항 상세보기 */
+.bbsview_list {width:1050px; margin:0 auto; padding-bottom:30px;  border-top:2px solid #384d75; text-align:left; list-style:none;}
+.bbsview_list li {box-sizing:border-box; padding:0 15px; border-bottom:1px solid #ccc; font-size:14px; color:#666;}
+.bbsview_list li.bbs_title {width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; height:50px; line-height:50px; font-weight:bold; font-size:16px;}
+.bbsview_list li.bbs_hit {height:40px; line-height:40px; float:left; width:50%;}
+.bbsview_list li.bbs_date {height:40px; line-height:40px; float:left; width:50%;}
+.bbsview_list li.bbs_content {clear:both; min-height:200px; padding:20px 15px;}
+.bbsview_list li.bbs_content .editer_content {line-height:1.4;}
+
+input {
+	height: 25px;
+	width:200px;
 }
 
-body {
-	font-size: 13pt;
-	color: gray;
-	margin: 5px 25px;
-}
-
-tr {
-	margin: 5px;
-}
-
-th {
-	padding: 5px;
-	color: white;
-	background: darkgray;
-}
-
-td {
-	padding: 5px;
-	color: black;
-	background: #e0e0ff;
-}
-
-table.navi {
-	width: 100%;
-	background: white;
-}
-
-table.navi tr {
-	background: white;
-}
-
-table.navi tr td {
-	background: white;
-}
-
-.err {
-	color: red;
+input[type="submit"],[type="reset"],[type="button"] {
+	height: 25px;
+	width:80px;
 }
 </style>
 
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-
-	<table th:each="obj : ${datalist}">
+	<div align=center>
+	<H2>견적서 조회</H2>
+	<HR>
+	<table th:each="obj : ${datalist}" class="bbsListTbl">
 		<form method="post" action="/detail/{id}">
 			<input type="hidden" th:value="${obj.id}" />
 		<tr>
@@ -69,18 +55,22 @@ table.navi tr td {
 		<tr>
 			<td>pc</td>
 			<td th:text="${obj.pc}"></td>
+			<td>만원</td>
 		</tr>
 		<tr>
 			<td>노트북</td>
 			<td th:text="${obj.laptop}"></td>
+			<td>만원</td>
 		</tr>
 		<tr>
 			<td>모니터</td>
 			<td th:text="${obj.monitor}"></td>
+			<td>만원</td>
 		</tr>
 		<tr>
 			<td>할인가격</td>
 			<td th:text="${obj.discount}"></td>
+			<td>만원</td>
 		</tr>
 		<tr>
 			<td>작성날짜</td>
@@ -102,7 +92,7 @@ table.navi tr td {
 				</center>
 			</td>
 		</tr>
-
 	</table>
+	</div>
 </body>
 </html>

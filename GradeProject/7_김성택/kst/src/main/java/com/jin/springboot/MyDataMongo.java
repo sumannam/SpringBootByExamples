@@ -33,7 +33,7 @@ public class MyDataMongo {
 		this.laptop = laptop;
 		this.monitor = monitor;
 		this.amount = pc + laptop + monitor;
-		this.discount = amount % 90;
+		this.discount = amount-=(amount*0.1);
 	}
 
 
