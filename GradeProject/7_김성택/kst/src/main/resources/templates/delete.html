@@ -37,17 +37,11 @@ input[type="submit"],[type="reset"],[type="button"] {
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-	
 	<table th:each="obj : ${datalist}" class="bbsListTbl">
 		<form method="post" action="/delete">
 		<input type="hidden" name = "id" th:value="${obj.id}" />
 			<tr>
-				<td colspan = "2" height = "70px"><center><h1>삭제</h1></center></td>
-			</tr>
-			<tr>
-				<td colspan = "2" height = "50px" width = "300px" th:text="${obj.name}" 님의 데이터를 삭제하시겠습니까?></td>
+				<td colspan = "2" height = "70px"><center><h1>정말 삭제하시겠습니까?</h1></center></td>
 			</tr>
 			<tr>
 				<td>
