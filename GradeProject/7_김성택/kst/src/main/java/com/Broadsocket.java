@@ -38,7 +38,22 @@ public class Broadsocket {
 	}
 
 	//웹 소켓에서 메시지가 오면 호출된다.
-
+	/**
+	 *
+	 * @fn 		public void onMessage(String message, Session session)
+	 * 
+	 * @brief 	메시지,세션비교 발송
+	 *
+	 * @author 	김성택
+	 * @date 	2019-06-20
+	 *
+	 * @param 	String message, Session session
+	 *
+	 * @remark	폼에 입력된 값을 받아온 후 객체에 저장	[2019-06-20; 김성택] \n
+	 *		   	save 메소드를 이용해 DB에 저장		[2019-06-20; 김성택] \n
+	 *			서버에 접속 중인 모든 이용자에게 메지지를 전송한다	[2019-06-20; 김성택] \n
+	 *
+	 */
 	// 서버에 접속 중인 모든 이용자에게 메지지를 전송한다
 
 	@OnMessage
