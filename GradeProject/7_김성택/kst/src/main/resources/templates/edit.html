@@ -52,13 +52,10 @@ input[type="submit"],[type="reset"],[type="button"] {
 			
 				<li class="bbs_title"><label for="boardTitle">제목</label><input type="text" name="boardTitle" th:value = "${obj.boardTitle}" /></li>
 				<li class="bbs_hit"><label for="name">이름</label><input type="text" name="name"  th:value = "${objname}"/></li>
-				<li class="bbs_date"><label for="pc">pc</label><input type="text" name="pc"  th:value = "${obj.pc}"/></li>
-				<li class="bbs_date"><label for="laptop">노트북</label><input type="text" name="laptop" th:value = "${obj.laptop}" /></li>
-				<li class="bbs_date"><label for="monitor">모니터</label><input type="text" name="monitor" th:value = "${obj.monitor}" /></li>
-				<li class="bbs_content"><label for="boardContent">내용</label></li>
-				<div class="editer_content">
-					<input type="text" name="boardContent" th:value = "${obj.boardContent}"/>
-				</div>
+				<li class="bbs_date"><label for="pc">pc</label><input type="text" name="pc"  th:value = "${obj.pc}"/>만원</li>
+				<li class="bbs_date"><label for="laptop">노트북</label><input type="text" name="laptop" th:value = "${obj.laptop}" />만원</li>
+				<li class="bbs_date"><label for="monitor">모니터</label><input type="text" name="monitor" th:value = "${obj.monitor}" />만원</li>
+				<li class="bbs_content"><label for="boardContent">내용</label><input type="text" name="boardContent" th:value = "${obj.boardContent}"/></li>
 				</li>
 				
 			</ul>
