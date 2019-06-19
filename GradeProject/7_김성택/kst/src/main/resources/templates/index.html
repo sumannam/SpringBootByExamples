@@ -45,13 +45,13 @@ input[type="submit"],[type="reset"],[type="button"] {
 		<form method="post" action="/">
 			<input type="hidden" name="id" th:value="*{id}" />
 		<tr>
-			<th>번호</th>
+			<th>최종가격</th>
 			<th>제목</th>
 			<th>이름</th>
-			<th>날짜</th>
+			<th>요청날짜</th>
 		</tr>
 		<tr th:each="obj : ${datalist}">
-			<td><span th:text="${obj.id}"></span></td>
+			<td><span th:text="${obj.discount}"></span></td>
 			<td><a th:href="@{'/detail/' + ${obj.id}}"><span th:text="${obj.boardTitle}"></span></a></td>
 			<td><span th:text="${obj.name}"></span></td>
 			<td><span th:text="${obj.date}"></span></td>

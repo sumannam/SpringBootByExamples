@@ -11,10 +11,10 @@
 .bbsListTbl th {border-bottom:1px solid #ccc; background:#f0f3fa;}
 .bbsListTbl td {text-align:center; line-height:1.3; border-bottom:1px solid #ccc;}
 .bbsListTbl td.tit_notice {text-align:center;}
-.bbsListTbl td:nth-child(1) {width:10%;}
-.bbsListTbl td:nth-child(2) {width:55%;}
-.bbsListTbl td:nth-child(3) {width:15%;}
-.bbsListTbl td:nth-child(4) {width:20%;}
+.bbsListTbl td:nth-child(1) {width:50%;}
+.bbsListTbl td:nth-child(2) {width:30%;}
+.bbsListTbl td:nth-child(3) {width:20%;}
+
 
 /* 공지사항 상세보기 */
 .bbsview_list {width:1050px; margin:0 auto; padding-bottom:30px;  border-top:2px solid #384d75; text-align:left; list-style:none;}
@@ -47,10 +47,12 @@ input[type="submit"],[type="reset"],[type="button"] {
 		<tr>
 			<td>제목</td>
 			<td th:text="${obj.boardTitle}"></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>이름</td>
 			<td th:text="${obj.name}"></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>pc</td>
@@ -73,12 +75,14 @@ input[type="submit"],[type="reset"],[type="button"] {
 			<td>만원</td>
 		</tr>
 		<tr>
-			<td>작성날짜</td>
+			<td>요청날짜</td>
 			<td th:text="${obj.date}"></td>
+			<td></td>
 		</tr>
 		</form>
 		<tr>
-			<td colspan="2">
+			
+			<td colspan="3">
 				<center>
 					<a th:href="@{'/edit/' + ${obj.id}}"><button>수정</button></a> 
 					<a th:href="@{'/delete/' + ${obj.id}}"><button>삭제</button></a> 
@@ -86,7 +90,7 @@ input[type="submit"],[type="reset"],[type="button"] {
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2">
+			<td colspan="3">
 				<center>
 					<a th:href="@{'/'}"><button>목록으로</button></a>
 				</center>
