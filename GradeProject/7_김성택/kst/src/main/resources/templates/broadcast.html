@@ -2,18 +2,23 @@
 <html> 		
 <head>
 	<meta charset="UTF-8">
-    <title>Testing websockets</title>
+    <title>web</title>
     <link rel="stylesheet" href="board.css" type="text/css" media="screen" />
 </head>
 <body>
+
     <div class="bbsview_list">
-
-        	<textarea id="messageWindow" rows="10" cols="50" readonly="true" class="bbsview_box"></textarea>
-
+    
+        <textarea id="messageWindow" rows="10" cols="50" readonly="true" class="bbsview_box"></textarea>
+        
         <br/>
+        
         <input id="inputMessage" type="text"/ class="bbsview_box">
+        
         <input type="button" value="보내기" onclick="send()" / class="bbsview_box">
+        
     </div>
+    
 </body>
     <script type="text/javascript">
         var textarea = document.getElementById("messageWindow");

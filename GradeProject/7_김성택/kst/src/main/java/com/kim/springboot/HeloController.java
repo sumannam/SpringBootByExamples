@@ -230,5 +230,26 @@ public class HeloController {
 		
 		return new ModelAndView("redirect:/");
 	}
+	
+	/**
+	 *
+	 * @fn 		public ModelAndView insert(ModelAndView mav)
+	 * 
+	 * @brief 	입력 페이지 설정 
+	 *
+	 * @author 	김성택
+	 * @date 	2019-06-20
+	 *
+	 * @param	mav ModelAndView
+	 *
+	 * @remark 	웹 페이지를 불러오기 위한 초기페이지 설정[2019-06-20; 김성택] \n
+	 *
+	 */
+	
+	@RequestMapping(value = "/broadcast", method = RequestMethod.GET)
+	public ModelAndView broadcast(ModelAndView mav) {
+		mav.setViewName("broadcast");
+		return mav;
+	}
 
 }
