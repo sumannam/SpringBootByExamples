@@ -59,32 +59,28 @@ table.navi tr td {
 		<form method="post" action="/detail/{id}">
 			<input type="hidden" th:value="${obj.id}" />
 		<tr>
+			<td>제목</td>
+			<td th:text="${obj.boardTitle}"></td>
+		</tr>
+		<tr>
 			<td>이름</td>
 			<td th:text="${obj.name}"></td>
 		</tr>
 		<tr>
-			<td>학번</td>
-			<td th:text="${obj.code}"></td>
+			<td>pc</td>
+			<td th:text="${obj.pc}"></td>
 		</tr>
 		<tr>
-			<td>자바</td>
-			<td th:text="${obj.Java}"></td>
+			<td>노트북</td>
+			<td th:text="${obj.laptop}"></td>
 		</tr>
 		<tr>
-			<td>스프링부트</td>
-			<td th:text="${obj.SpringBoot}"></td>
+			<td>모니터</td>
+			<td th:text="${obj.monitor}"></td>
 		</tr>
 		<tr>
-			<td>데이터베이스</td>
-			<td th:text="${obj.DataBase}"></td>
-		</tr>
-		<tr>
-			<td>총점</td>
-			<td th:text="${obj.Amount}"></td>
-		</tr>
-		<tr>
-			<td>평균</td>
-			<td th:text="${obj.Average}"></td>
+			<td>할인가격</td>
+			<td th:text="${obj.discount}"></td>
 		</tr>
 		<tr>
 			<td>작성날짜</td>

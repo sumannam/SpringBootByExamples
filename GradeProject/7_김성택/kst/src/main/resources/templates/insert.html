@@ -4,93 +4,62 @@
 <title>top page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style>
-h1 {
-	font-size: 18pt;
-	font-weight: bold;
-	color: gray;
+@CHARSET "UTF-8";
+
+.bbsListTbl {width:1050px; margin:0 auto; border-top:2px solid #384d75;}
+.bbsListTbl th, .bbsListTbl td {padding:10px; box-sizing:border-box; height:55px;}
+.bbsListTbl th {border-bottom:1px solid #ccc; background:#f0f3fa;}
+.bbsListTbl td {text-align:center; line-height:1.3; border-bottom:1px solid #ccc;}
+.bbsListTbl td.tit_notice {text-align:center;}
+.bbsListTbl td:nth-child(1) {width:10%;}
+.bbsListTbl td:nth-child(2) {width:55%;}
+.bbsListTbl td:nth-child(3) {width:15%;}
+.bbsListTbl td:nth-child(4) {width:20%;}
+
+/* 공지사항 상세보기 */
+.bbsview_list {width:1050px; margin:0 auto; padding-bottom:30px;  border-top:2px solid #384d75; text-align:left; list-style:none;}
+.bbsview_list li {box-sizing:border-box; padding:0 15px; border-bottom:1px solid #ccc; font-size:14px; color:#666;}
+.bbsview_list li.bbs_title {width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; height:50px; line-height:50px; font-weight:bold; font-size:16px;}
+.bbsview_list li.bbs_hit {height:40px; line-height:40px; float:left; width:100%;}
+.bbsview_list li.bbs_date {height:40px; line-height:40px; float:left; width:33%;}
+.bbsview_list li.bbs_content {clear:both; min-height:200px; padding:20px 15px;}
+.bbsview_list li.bbs_content .editer_content {line-height:1.4;}
+
+input {
+	height: 25px;
+	width:200px;
 }
 
-body {
-	font-size: 13pt;
-	color: gray;
-	margin: 5px 25px;
+input[type="submit"],[type="reset"],[type="button"] {
+	height: 25px;
+	width:80px;
 }
 
-tr {
-	margin: 5px;
-}
-
-th {
-	padding: 5px;
-	color: white;
-	background: darkgray;
-}
-
-td {
-	padding: 5px;
-	color: black;
-	background: #e0e0ff;
-}
-
-table.navi {
-	width: 100%;
-	background: white;
-}
-
-table.navi tr {
-	background: white;
-}
-
-table.navi tr td {
-	background: white;
-}
-
-.err {
-	color: red;
-}
 </style>
 </head>
 <body>
-	<h1 th:text="#{content.title}">Helo page</h1>
-	<p th:text="${msg}"></p>
-	
-	<table>
+	<div align="center">
 		<form method="post" action="/insert">
 		<input type="hidden" name="id" th:value="*{id}" />
-			<tr>
-				<td><label for="boardTitle">제목</label></td>
-				<td><input type="text" name="boardTitle" /></td>
-			</tr>
-			<tr>
-				<td><label for="boardContent">내용</label></td>
-				<td><input type="text" name="boardContent" /></td>
-			</tr>
-			<tr>
-				<td><label for="name">이름</label></td>
-				<td><input type="text" name="name" /></td>
-			</tr>
-			<tr>
-				<td><label for="pc">pc</label></td>
-				<td><input type="text" name="pc" /></td>
-			</tr>
-			<tr>
-				<td><label for="laptop">노트북</label></td>
-				<td><input type="text" name="laptop" /></td>
-			</tr>
-			<tr>
-				<td><label for="monitor">모니터</label></td>
-				<td><input type="text" name="monitor" /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>
+		<div class="bodytext_area box_inner">			
+			<ul class="bbsview_list">
+				<li class="bbs_title"><label for="boardTitle">제목</label><input type="text" name="boardTitle" /></li>
+				<li class="bbs_hit"><label for="name">이름</label><input type="text" name="name" /></li>
+				<li class="bbs_date"><label for="pc">pc</label><input type="text" name="pc" /></li>
+				<li class="bbs_date"><label for="laptop">노트북</label><input type="text" name="laptop" /></li>
+				<li class="bbs_date"><label for="monitor">모니터</label><input type="text" name="monitor" /></li>
+								<li class="bbs_content"><label for="boardContent">내용</label>
+					<div class="editer_content">
+						<input type="text" name="boardContent" />
+					</div>
+				</li>
+			</ul>
+		</div>
 					<input type="submit" value = "저장"/>
 					</form>
 					<a th:href="@{'/'}"><button>취소</button></a>
-				</td>
-			</tr>
 
 		
-	</table>
+	</div>
 </body>
 </html>

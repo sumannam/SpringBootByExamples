@@ -39,7 +39,7 @@ input[type="submit"],[type="reset"],[type="button"] {
 </head>
 <body>
 	<div align=center>
-	<H2>자유게시판</H2>
+	<H2>상담게시판</H2>
 	<HR>
 	<table class="bbsListTbl">
 		<form method="post" action="/">
@@ -58,10 +58,10 @@ input[type="submit"],[type="reset"],[type="button"] {
 		</tr>
 		<tr>
 			<td colspan=4 align=right>
+    				<a th:href="@{'/insert'}">글쓰기</a>
     				<a th:href="@{'/insert'}">성적입력</a>
 			</td>
 		</tr>
-		<a th:href="@{'/insert'}">성적입력</a>
 		</form>
 	</table>
 	</div>
