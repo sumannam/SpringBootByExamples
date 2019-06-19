@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html> 		
 <head>
-	<meta charset="UTF-8">
-    <title>web</title>
-    <link rel="stylesheet" href="board.css" type="text/css" media="screen" />
+<title>web</title>
+<meta charset="UTF-8">
+<style>
+@CHARSET "UTF-8";
+
+.bbsview_list {width:345px; margin:0 auto;}
+.bbsview_box { border:2px solid #384d75; background:#f0f3fa;  font-weight:bold; font-size:16px;}
+
+
+input {
+	height: 25px;
+	width:200px;
+}
+
+input[type="submit"],[type="reset"],[type="button"] {
+	height: 25px;
+	width:80px;
+}
+
+</style>
 </head>
 <body>
 
@@ -22,7 +39,7 @@
 </body>
     <script type="text/javascript">
         var textarea = document.getElementById("messageWindow");
-        var webSocket = new WebSocket('ws://localhost:8080/ws/broadcasting');
+        var webSocket = new WebSocket('ws://localhost:8080/kst/chat/broadcasting');
         var inputMessage = document.getElementById('inputMessage');
         
 

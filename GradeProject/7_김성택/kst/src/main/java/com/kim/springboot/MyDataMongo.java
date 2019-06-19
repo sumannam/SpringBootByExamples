@@ -21,6 +21,21 @@ public class MyDataMongo {
 	private int amount;
 	private int discount;
 	
+	/**
+	 *
+	 * @fn 		public MyDataMongo()
+	 * 
+	 * @brief 	데이터 저장
+	 *
+	 * @author 	김성택
+	 * @date 	2019-06-20
+	 *
+	 * @param	String name, String boardTitle, String boardContent, int pc, int laptop, int monitor
+	 *
+	 * @remark 	몽고디비에 있는데이터를 가저온다  [2019-06-20; 김성택] \n
+	 *
+	 */
+	
 	
 	public MyDataMongo(String name, String boardTitle, String boardContent, int pc, int laptop, int monitor) {
 
@@ -35,6 +50,21 @@ public class MyDataMongo {
 		this.amount = pc + laptop + monitor;
 		this.discount = amount-=(amount*0.1);
 	}
+	
+	/**
+	 *
+	 * @fn 		public getId(),setId(id)
+	 * 
+	 * @brief 	데이터 이동
+	 *
+	 * @author 	김성택
+	 * @date 	2019-06-20
+	 *
+	 * @param	필드의 모든데이터
+	 *
+	 * @remark 	필드의 데이터들을 집어넣거나 꺼낼때 쓰는함수이다  [2019-06-20; 김성택] \n
+	 *
+	 */
 
 
 	public String getId() {

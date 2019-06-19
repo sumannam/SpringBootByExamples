@@ -233,9 +233,9 @@ public class HeloController {
 	
 	/**
 	 *
-	 * @fn 		public ModelAndView insert(ModelAndView mav)
+	 * @fn 		public ModelAndView broadcast(ModelAndView mav)
 	 * 
-	 * @brief 	입력 페이지 설정 
+	 * @brief 	채팅 페이지 설정 
 	 *
 	 * @author 	김성택
 	 * @date 	2019-06-20
