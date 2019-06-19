@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html> 		
+<head>
+	<meta charset="UTF-8">
+    <title>Testing websockets</title>
+    <link rel="stylesheet" href="board.css" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="bbsview_list">
+
+        	<textarea id="messageWindow" rows="10" cols="50" readonly="true" class="bbsview_box"></textarea>
+
+        <br/>
+        <input id="inputMessage" type="text"/ class="bbsview_box">
+        <input type="button" value="보내기" onclick="send()" / class="bbsview_box">
+    </div>
+</body>
+    <script type="text/javascript">
+        var textarea = document.getElementById("messageWindow");
+        var webSocket = new WebSocket('ws://localhost:8080/ws/broadcasting');
+        var inputMessage = document.getElementById('inputMessage');
+        
+
+  	//웹 소켓이 연결되었을 때 호출되는 이벤트
+    //접속하면 messageWindow요소에 메시지에 추가
+    
+    webSocket.onopen = function onOpen(event) {
+        textarea.value += "접속 완료\n";
+    }
+  	
+    //웹 소켓에서 메시지가 날라왔을 때 호출되는 이벤트
+    //메시지가 오면 messageWindow요소에 메시지추가
+
+    webSocket.onmessage = function onMessage(event) {
+        textarea.value += "상대 : " + event.data + "\n";
+    }
+    
+    //에러발생알림
+    
+    webSocket.onerror = function onError(event) {
+      alert(event.data);
+    }
+    
+  	//Send 버튼을 누르면 실행되는 함수
+  	
+    function send() {
+        textarea.value += "나 : " + inputMessage.value + "\n";	//메시지를 보내면 messageWindow요소에 추가
+        webSocket.send(inputMessage.value);	//웹소켓으로inputMessage객체의 값을 보낸다.
+        inputMessage.value = "";	//textMessage객체의 값 초기화
+    }
+  </script>
+</html>
