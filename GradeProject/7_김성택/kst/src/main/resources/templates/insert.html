@@ -41,25 +41,31 @@ input[type="submit"],[type="reset"],[type="button"] {
 	<div align="center">
 	<H2>3가지 구매시 10% 할인</H2>
 	<HR>
-		<form method="post" action="/insert">
-		<input type="hidden" name="id" th:value="*{id}" />
-		<div class="bodytext_area box_inner">			
-			<ul class="bbsview_list">
-				<li class="bbs_title"><label for="boardTitle">제목</label><input type="text" name="boardTitle" /></li>
-				<li class="bbs_hit"><label for="name">이름</label><input type="text" name="name" /></li>
-				<li class="bbs_date"><label for="pc">pc</label><input type="text" name="pc" />만원</li>
-				<li class="bbs_date"><label for="laptop">노트북</label><input type="text" name="laptop" />만원</li>
-				<li class="bbs_date"><label for="monitor">모니터</label><input type="text" name="monitor" />만원</li>
-				<li class="bbs_content"><label for="boardContent">내용</label>
-					<div class="editer_content">
-						<input type="text" name="boardContent" />
-					</div>
-				</li>
-			</ul>
-		</div>
+		
+		<div class="bodytext_area box_inner">
+		
+			<form method="post" action="/insert">
+			
+			<input type="hidden" name="id" th:value="*{id}" />
+				
+				<ul class="bbsview_list">
+				
+					<li class="bbs_title"><label for="boardTitle">제목</label><input type="text" name="boardTitle" /></li>
+					<li class="bbs_hit"><label for="name">이름</label><input type="text" name="name" /></li>
+					<li class="bbs_date"><label for="pc">pc</label><input type="text" name="pc" />만원</li>
+					<li class="bbs_date"><label for="laptop">노트북</label><input type="text" name="laptop" />만원</li>
+					<li class="bbs_date"><label for="monitor">모니터</label><input type="text" name="monitor" />만원</li>
+					<li class="bbs_content"><label for="boardContent">내용</label><input type="text" name="boardContent" /></li>
+					
+				</ul>
+				
+			</div>
+			
 				<input type="submit" value = "저장"/>
 				<a th:href="@{'/'}"><button>취소</button></a>
 		</form>
+		
 	</div>
+	
 </body>
 </html>
